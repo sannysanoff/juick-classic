@@ -5,11 +5,12 @@
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
 // @grant 	none
-// @version     1.9
+// @version     1.10
 // ==/UserScript==
 
 // mozilla guid 41ee170c-9409-43b7-898d-c5de44b553db
 // https://arantius.com/misc/greasemonkey/script-compiler.php
+
 
 try {
     var mode = "UNKNOWN";
@@ -297,7 +298,6 @@ try {
         }
     }
 
-
     function toggleInlineComments(msgid, then) {
         var existing = document.getElementsByClassName("comments-"+msgid);
         if (existing.length == 0) {
@@ -344,6 +344,27 @@ try {
         }
     }
 
+
+    // places column with links etc to the right
+    function fixColumnPosition() {
+        window.setTimeout(function() {
+            //
+            // run after original code
+            //
+            if (mode == "MESSAGES") {
+                var col = document.getElementById("column");
+                if (col && col.classList.length == 1) {
+                    if (col.classList[0] == "abs") {
+                        col.style.left = "668px";
+                    } else {
+                        col.style.left = "800px";
+                    }
+                }
+            }
+        }, 1);
+    }
+
+
     var theme = getCookie("juick_classic_theme");
     var bright = theme ? theme != "dark" : true;
     var cs = getCookie("cs");
@@ -361,6 +382,9 @@ try {
 
     var style = document.createElement("style");
     style.appendChild(document.createTextNode("a { color: #b07131; }"));
+
+    // make secondary toolbar not so big, so (at least initially) it looks not ugly.
+    style.appendChild(document.createTextNode("div.title2 { width: 60%; }"));
 
 
     var jnotify = document.getElementsByName("jnotify");
@@ -643,14 +667,43 @@ try {
             var a = msgts.getElementsByTagName("A")[0];
             var date = a.innerHTML;
             var links = message.getElementsByClassName("msg-links")[0];
+
             msgts.style.display = "none";
             var theSpan = message.ownerDocument.createElement("span");
             theSpan.setAttribute("class","msg-ts");
             theSpan.appendChild(message.ownerDocument.createTextNode(date));
             links.appendChild(theSpan);
+
         }
         if (doInlineMedia)
             inlineMedia(message);
+    }
+
+    function maybeAddImageButton(ta, msgid, rid) {
+        var existingImgLink = ta.nextSibling;
+        if (existingImgLink && existingImgLink.nodeName.toLowerCase() == "A") {
+            // already here
+        } else {
+            ta.style.width = rid != 0 ? "400px": "460px";
+            var theA = document.createElement("A");
+            theA.style.fontSize = "smaller";
+            var theIMG = document.createElement("IMG");
+            theIMG.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAACXBIWXMAAAsTAAALEwEAmpw"+
+                "YAAACkElEQVQ4EaWUOWgUYRSAdzaneMYD7yOgpEgQlUQrJYiiiIiiIAqWsdDGWpLa1iI2aljEINjYKMZCNIkgCiIIGgQtjGSDBwg"+
+                "iahKj6/fNzgyzy8K6+ODb/3r/e/87ZoNCoZD5HwmCYAf3G7HzqKIdHfwrGKiDZlgHp2EEZuEJ1FeyU9U4FwNogLmwE/phAr7DK7g"+
+                "P09BZkwMuNEILtMM5GIWvMAk34AgsgFb4ARchKHdSEgEKWfCly+EAXIZ38AmeQS+0p42wNsLb8B4Wpc+c17OZoVC+VsOrYA8che3w"+
+                "Bx7CTRiGn6D+MseU6OAg7OPsQWp/Su9rPIC90AkzoIElMA5v4RdYByOsJHPY3AJ5MBLFhhjypxuugWm5BeZSB60wCjrUwRRYTMdyvr"+
+                "E3Bh9BfR++Gz5AZnU0ucNYZ96QQfAl86EpGhczmkrX1ViPjoXPZTFoWAOwCzpAyYKezLnh94GRdaE/nSY6ny3bM9JQNKSYGtN12EVKL"+
+                "PJKOAunYD8kQkF1fgY2JpvFiSkKJewiZi9gCHq45Et/g6LTSbgChn0P0qLx87CVe88ZrxPJRFoh+Q7YPAYaPgQDMA5NXGAI67QpXkd7"+
+                "XazVUcEiW9Dj0ZlRF2vAJJZhJno/CUYWWmb0EXl4w7Sbly6NUtPHeq3nyDywC233UtFjDCcXwNeYMvs/jMBzpAc+wwjkwHb0II2dtxB"+
+                "WQBhBYjwyso0De9zLr8F2tGAn4AtozG/Cy2nD8dwU2wgtkU4uLjLrUF7y+xRsWTtIR/6FbAabQEPVpAGFRK/EAVHMkN9BFHTg69vAnr" +
+                "4KySXm1cR7Rl78syvTvsvadGyAx6DUYlx927vZSUkEbhBFniguMTWKWg1rIhYjGPsL542BZVk3kGUAAAAASUVORK5CYII=";
+            theA.appendChild(theIMG);
+            theIMG.height = ""+ta.offsetHeight;
+            theIMG.style.background = "#FFFFFF";
+            theA.href = "/post?body=%23"+msgid+(rid != 0? "/"+rid: "")+" ";
+            ta.parentNode.insertBefore(theA, ta.nextSibling);
+        }
     }
 
     function collectMessages(doc) {
@@ -673,36 +726,38 @@ try {
     }
 
     if (mode == "MESSAGES") {
-        var leftColumn = document.getElementById("column");
-        var rcol = document.getElementById("rcol");
-        if (rcol == null) {
-            mode = "USERBLOG";
-            var wrapper = document.getElementById("wrapper");
-            if (wrapper != null) {
-                //
-                // Adding missing right column for user blog page
-                //
-                rcol = document.createElement("div");
-                rcol.style.float = "left";
-                rcol.setAttribute("id","rcol");
-                rcol.created = "true";
-                wrapper.appendChild(rcol);
-                var content = document.getElementById("content");
-                if (firefox || opera) {
-                    rcol.style.marginLeft = "680px";
-                } else {
-                    content.style.float = "left";
-                }
-            }
-        } else {
-            // fixing position for general messages
-            rcol.style.marginLeft = "-320px";
-        }
-        if (rcol != null) { // maybe user blog?
-            // fixing column position
-            style.appendChild(document.createTextNode("#content { padding-left: 40px; padding-right: 40px; margin: 0px;}"));
-            rcol.appendChild(leftColumn);
-        }
+//        var leftColumn = document.getElementById("column");
+//        var rcol = document.getElementById("rcol");
+//        if (rcol == null) {
+//            mode = "USERBLOG";
+//            var wrapper = document.getElementById("wrapper");
+//            if (wrapper != null) {
+//                //
+//                // Adding missing right column for user blog page
+//                //
+//                rcol = document.createElement("div");
+//                rcol.style.float = "left";
+//                rcol.setAttribute("id","rcol");
+//                rcol.created = "true";
+//                wrapper.appendChild(rcol);
+//                var content = document.getElementById("content");
+//                if (firefox || opera) {
+//                    rcol.style.marginLeft = "680px";
+//                } else {
+//                    content.style.float = "left";
+//                }
+//            }
+//        } else {
+//            // fixing position for general messages
+//            rcol.style.marginLeft = "-320px";
+//        }
+        // fixing column position
+
+        //
+        // fix content position
+        //
+        style.appendChild(document.createTextNode("#content { padding-left: 40px; padding-right: 40px; margin: 0px;}"));
+
         var maybeMessages = document.getElementsByClassName("msg");
         var messages = new Array(); // prevent mutations while iterating
         for (var i = 0; i < maybeMessages.length; i++) {
@@ -727,16 +782,26 @@ try {
         // fixing HASH sign
         //
         var mtoolbar = document.getElementById("mtoolbar");
+        var msgid = null;
         if (mtoolbar) {
             var as = mtoolbar.getElementsByTagName("A");
             if (as.length > 0) {
                 var a = as[0];
                 var href = a.getAttribute("href");
-                var msgno = href.substr(href.lastIndexOf("/")+1);
-                a.href = ""+msgno;
-                setText(a, "#"+msgno);
+                msgid = href.substr(href.lastIndexOf("/")+1);
+                a.href = ""+msgid;
+                setText(a, "#"+msgid);
             }
         }
+        var tas = document.getElementsByTagName("TEXTAREA");
+        if (tas && msgid) {
+            for(var i=0;i<tas.length; i++) {
+                if ("body" == tas[i].name) {
+                    maybeAddImageButton(tas[i],msgid, 0);
+                }
+            }
+        }
+
         //
         // fixing missing comment self-link
         //
@@ -754,6 +819,32 @@ try {
                 theA.setAttribute("href", "#"+rid);
                 theA.appendChild(linkz.ownerDocument.createTextNode("/" + rid));
                 linkz.insertBefore(theA, linkz.firstChild);
+
+                //
+                // XMPP reply url
+                //
+                linkz.appendChild(linkz.ownerDocument.createTextNode(" · "));
+                var jabberA = linkz.ownerDocument.createElement("A");
+                jabberA.href="xmpp:juick@juick.com?message;body=%23"+msgid+"/"+rid+" ";
+                setText(jabberA,"#");
+                linkz.appendChild(jabberA);
+                var allLinks = linkz.getElementsByTagName("A");
+                for(var l=0; l<allLinks.length; l++) {
+                    var linkText = getText(allLinks[l]);
+                    if (linkText == "Comment" || linkText == "Ответить") {
+                        (function(oldProg, commentNode) {
+                            allLinks[l].onclick = function() {
+                                oldProg();
+                                var tas = commentNode.getElementsByTagName("textarea");
+                                if (tas && tas.length > 0) {
+                                    var ta = tas[0];
+                                    maybeAddImageButton(ta, msgid, rid);
+                                }
+                                return false;
+                            }
+                        })(allLinks[l].onclick, linkz.parentNode);
+                    }
+                }
             } else {
                 try {
                     var lih = (""+linkz.innerHTML);
@@ -779,6 +870,11 @@ try {
         for (var i in comments) {
             processComment(comments[i]);
         }
+        var starter = document.getElementById("msg-"+msgid);
+        if (starter) {
+            inlineMedia(starter);
+        }
+
     }
 
     document.body.appendChild(style);
@@ -850,8 +946,12 @@ try {
         }
     }
 
+    window.addEventListener("scroll", function () {
+        fixColumnPosition();
+    });
+
     if (continousScroll) {
-        window.onscroll = function () {
+        window.addEventListener("scroll", function () {
             var nVScroll = document.documentElement.scrollTop || document.body.scrollTop;
             //document.title = "SCROLL="+(nVScroll+window.innerHeight)+" BODYHEI="+document.body.offsetHeight+" SIGN="+(nVScroll + window.innerHeight - (document.body.offsetHeight - window.innerHeight * 4))+" ";
             try {
@@ -915,9 +1015,11 @@ try {
             } catch (e) {
                 //window.alert(e);
             }
-        }
+        });
 
     }
+
+    fixColumnPosition()
 } catch (e) {
-    //alert("global: "+e);
+    alert("global: "+e);
 }
