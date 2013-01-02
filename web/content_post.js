@@ -72,6 +72,38 @@ try {
         }
     }
 
+    function doAjaxRequest(url, callback, wantXML) {
+        try {
+            var req = new XMLHttpRequest();
+            req.open("GET", url);
+            req.onload = function () {
+                if (wantXML) {
+                    callback(req.responseXML);
+                } else {
+                    callback(req.responseText);
+                }
+            }
+            req.send();
+        } catch (e) {
+            try {
+                GM_xmlhttpRequest({
+                    method: "GET",
+                    url: url,
+                    onload: function (response) {
+                        if (wantXML) {
+                            callback(req.responseXML);
+                        } else {
+                            callback(req.responseText);
+                        }
+                    }
+                });
+            } catch (e) {
+                document.title = "Sorry, unable to make XMLHttpRequest";
+            }
+        }
+
+    }
+
     function parseHTML(response) {
         var doc = document.implementation.createHTMLDocument('');
         if (firefox || opera) {
@@ -104,7 +136,6 @@ try {
         var full_image = true;
         for (var li = 0; li < all_links.length; li++) {
             var node = all_links[li];
-
             if (tubeid = /youtube\.com\/watch\?v=(.+)/
                 .exec(node.href)) { // YouTube
                 var elem = document.createElement("div");
@@ -169,14 +200,18 @@ try {
                     node.nextSibling);
             } else if (myurl = /http:\/\/gelbooru\.com\/index\.php\?page=post\&s=view\&id=(\d+)/
                 .exec(node.href)) { // Gelbooru
-				doAjaxRequest("http://acao-0x588.herokuapp.com/acao/gelbooru.com/index.php?page=dapi&s=post&q=index&id="+myurl[1], function(response) {
-					var gelbooru_thumbnail = response.getElementsByTagName("post")[0].attributes["preview_url"].value;
-					var gelbooru_id = response.getElementsByTagName("post")[0].attributes["id"].value;
-					var elem = document.createElement("div");
-					elem.setAttribute("style", "margin-top: 5px;");
-        		    elem.innerHTML = '<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>';
-        		    node.parentNode.insertBefore(elem, node.nextSibling);
-				}, true);
+                try {
+                    doAjaxRequest("http://acao-0x588.herokuapp.com/acao/gelbooru.com/index.php?page=dapi&s=post&q=index&id=" + myurl[1], function (response) {
+                        var gelbooru_thumbnail = response.getElementsByTagName("post")[0].attributes["preview_url"].value;
+                        var gelbooru_id = response.getElementsByTagName("post")[0].attributes["id"].value;
+                        var elem = document.createElement("div");
+                        elem.setAttribute("style", "margin-top: 5px;");
+                        elem.innerHTML = '<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>';
+                        node.parentNode.insertBefore(elem, node.nextSibling);
+                    }, true);
+                } catch (e) {
+                    // alert("oops!"+e);
+                }
             } else if (myurl = /http:\/\/(\S+)fastpic\.ru\/big\/(\S+)\.(jpg|png|gif)/
                 .exec(node.href)) { // Fastpic.ru
                 var elem = document.createElement("div");
@@ -921,37 +956,6 @@ try {
         return null;
     }
 
-    function doAjaxRequest(url, callback, type) {
-        try {
-            var req = new XMLHttpRequest();
-            req.open("GET", url);
-            req.onload = function () {
-				if (type) {
-					callback(req.responseXML);
-				} else {
-					callback(req.responseText);
-				}
-            }
-            req.send();
-        } catch (e) {
-            try {
-                GM_xmlhttpRequest({
-                    method: "GET",
-                    url: url,
-                    onload: function (response) {
-						if (type) {
-							callback(req.responseXML);
-						} else {
-							callback(req.responseText);
-						}
-                    }
-                });
-            } catch (e) {
-                document.title = "Sorry, unable to make XMLHttpRequest";
-            }
-        }
-
-    }
 
     if (autoExpand) {
         try {
