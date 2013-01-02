@@ -4,7 +4,7 @@
 // @description Juick Classic Style
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
-// @grant 	none
+// @grant       none
 // @version     1.10
 // ==/UserScript==
 
