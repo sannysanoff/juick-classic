@@ -4,7 +4,7 @@
 // @description Juick Classic Style
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
-// @grant 	none
+// @grant     none
 // @version     1.9
 // ==/UserScript==
 
@@ -166,7 +166,39 @@ try {
                     + '.jpeg" /></a>';
                 node.parentNode.insertBefore(elem,
                     node.nextSibling);
-            } else if (myurl = /http:\/\/(\S+)fastpic\.ru\/big\/(\S+)\.(jpg|png|gif)/
+            } else if (myurl = /http:\/\/gelbooru\.com\/index\.php\?page=post\&s=view\&id=(\d+)/
+                .exec(node.href)) { // Gelbooru
+				doAjaxRequest("http://acao-0x588.herokuapp.com/acao/gelbooru.com/index.php?page=dapi&s=post&q=index&id="+myurl[1], function(response) {
+					var gelbooru_thumbnail = response.getElementsByTagName("post")[0].attributes["preview_url"].value;
+					var gelbooru_id = response.getElementsByTagName("post")[0].attributes["id"].value;
+					var elem = document.createElement("div");
+					elem.setAttribute("style", "margin-top: 5px;");
+        		    elem.innerHTML = '<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>';
+        		    node.parentNode.insertBefore(elem, node.nextSibling);
+				}, false);
+/*             } else if (myurl = /http:\/\/danbooru\.donmai\.us\/post\/show\/(\d+)/
+                .exec(node.href)) { // Danbooru
+				doAjaxRequest("http://acao-0x588.herokuapp.com/acao/danbooru.donmai.us/post/show/" + myurl[1], function(response) {
+					var doc = parseHTML(response);
+					var danbooru_img_md5 = doc.getElementById("image").attributes["src"].value.split("/")[4].split(".")[0];
+					var danbooru_id = doc.getElementById("stats").innerText.split("\n",4)[3].split(" ")[5];
+					var elem = document.createElement("div");
+					elem.setAttribute("style", "margin-top: 5px;");
+        		    elem.innerHTML = '<a href="http://danbooru.donmai.us/post/show/' + danbooru_id + '"><img src="http://danbooru.donmai.us/ssd/data/preview/' + danbooru_img_md5 + '.jpg" /></a>';
+        		    node.parentNode.insertBefore(elem, node.nextSibling);
+				}, true);
+            } else if (myurl = /http:\/\/(chan|idol)\.sankakucomplex\.com\/post\/show\/(\d+)/
+                .exec(node.href)) { // Sankaku chan&idol
+				doAjaxRequest("http://acao-0x588.herokuapp.com/acao/chan.sankakucomplex.com/post/similar?id=" + myurl[2], function(response) {
+					var doc = parseHTML(response);
+					var sankaku_id = doc.getElementsByClassName("thumb")[0].attributes["id"].value.split("p")[1];
+					var sankaku_thumbnail = doc.getElementById("p"+sankaku_id).getElementsByTagName("img")[0].attributes["src"].value;
+					var elem = document.createElement("div");
+					elem.setAttribute("style", "margin-top: 5px;");
+        		    elem.innerHTML = '<a href="http://chan.sankakucomplex.com/post/show/' + sankaku_id + '"><img src="' + sankaku_thumbnail + '" /></a>';
+        		    node.parentNode.insertBefore(elem, node.nextSibling);
+				}, true);
+ */            } else if (myurl = /http:\/\/(\S+)fastpic\.ru\/big\/(\S+)\.(jpg|png|gif)/
                 .exec(node.href)) { // Fastpic.ru
                 var elem = document.createElement("div");
                 elem.setAttribute("style", "margin-top: 5px;");
@@ -335,7 +367,7 @@ try {
                         window.alert(e);
                     }
                 }, 100)
-            })
+            }, true)
         } else {
             for(var i=existing.length-1; i>=0; i--) {
                 existing[i].parentNode.removeChild(existing[i]);
@@ -815,12 +847,16 @@ try {
         return null;
     }
 
-    function doAjaxRequest(url, callback) {
+    function doAjaxRequest(url, callback, type) {
         try {
             var req = new XMLHttpRequest();
             req.open("GET", url);
             req.onload = function () {
-                callback(req.responseText);
+				if (type) {
+					callback(req.responseText);
+				} else {
+					callback(req.responseXML);
+				}
             }
             req.send();
         } catch (e) {
@@ -829,7 +865,11 @@ try {
                     method: "GET",
                     url: url,
                     onload: function (response) {
-                        callback(response.responseText);
+						if (type) {
+							callback(req.responseText);
+						} else {
+							callback(req.responseXML);
+						}
                     }
                 });
             } catch (e) {
@@ -908,7 +948,7 @@ try {
                         } catch (e) {
                             window.alert(e);
                         }
-                    });
+                    }, true);
                 } else {
                     //window.alert("Last part is null");
                 }
