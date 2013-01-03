@@ -5,12 +5,11 @@
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
 // @grant       none
-// @version     1.10
+// @version     1.12
 // ==/UserScript==
 
 // mozilla guid 41ee170c-9409-43b7-898d-c5de44b553db
 // https://arantius.com/misc/greasemonkey/script-compiler.php
-
 
 try {
     var mode = "UNKNOWN";
@@ -72,31 +71,93 @@ try {
         }
     }
 
+    function getAbsoluteLeft(elem) {
+        var left = 0;
+        var curr = elem;
+        // This intentionally excludes body which has a null offsetParent.
+        while (curr.offsetParent) {
+            left -= curr.scrollLeft;
+            curr = curr.parentNode;
+        }
+        while (elem) {
+            left += elem.offsetLeft;
+            elem = elem.offsetParent;
+        }
+        return left;
+    };
+
+
+    var pendingAjaxs = new Array();
+    var requestInProgress = false;
+
+    function maybeNextAjaxRequest() {
+        if (pendingAjaxs.length > 0) {
+            pendingAjaxs.shift()(); // call lazy function
+        }
+
+   }
+
     function doAjaxRequest(url, callback, wantXML) {
         try {
             var req = new XMLHttpRequest();
             req.open("GET", url);
             req.onload = function () {
-                if (wantXML) {
-                    callback(req.responseXML);
-                } else {
-                    callback(req.responseText);
+                try {
+                    if (wantXML) {
+                        callback(req.responseXML);
+                    } else {
+                        callback(req.responseText);
+                    }
+                } catch (e) {
+                    //alert("doAjaxRequest: "+e);
                 }
             }
             req.send();
         } catch (e) {
             try {
-                GM_xmlhttpRequest({
-                    method: "GET",
-                    url: url,
-                    onload: function (response) {
-                        if (wantXML) {
-                            callback(req.responseXML);
-                        } else {
-                            callback(req.responseText);
+                if (requestInProgress) {
+                    pendingAjaxs.push(function() { // lazy function call
+                        doAjaxRequest(url, callback, wantXML);
+                    })
+                } else {
+                    requestInProgress = true;
+                    GM_xmlhttpRequest({
+                        method: "GET",
+                        url: url,
+                        onload: function (response) {
+                            try {
+                                try {
+                                    if (response.charCodeAt && response.length) {
+                                        // is string
+                                        response = ""+response;
+                                    } else {
+                                        response = response.responseText;
+                                    }
+                                } catch (e) {
+                                    response = response.responseText;
+                                }
+                                if (wantXML) {
+                                    callback(parseHTML(response));
+                                } else {
+                                    callback(response);
+                                }
+                            } catch (e) {
+                                //alert("GM_xmlhttpRequest: "+e+" response="+response+" resp.rx="+respo);
+                            } finally {
+                                requestInProgress = false;
+                                maybeNextAjaxRequest();
+                            }
+                        },
+                        onerror: function () {
+                            requestInProgress = false;
+                            maybeNextAjaxRequest();
+                        },
+                        ontimeout: function() {
+                            requestInProgress = false;
+                            maybeNextAjaxRequest();
                         }
-                    }
-                });
+                    });
+                }
             } catch (e) {
                 document.title = "Sorry, unable to make XMLHttpRequest";
             }
@@ -200,18 +261,20 @@ try {
                     node.nextSibling);
             } else if (myurl = /http:\/\/gelbooru\.com\/index\.php\?page=post\&s=view\&id=(\d+)/
                 .exec(node.href)) { // Gelbooru
-                try {
-                    doAjaxRequest("http://acao-0x588.herokuapp.com/acao/gelbooru.com/index.php?page=dapi&s=post&q=index&id=" + myurl[1], function (response) {
-                        var gelbooru_thumbnail = response.getElementsByTagName("post")[0].attributes["preview_url"].value;
-                        var gelbooru_id = response.getElementsByTagName("post")[0].attributes["id"].value;
-                        var elem = document.createElement("div");
-                        elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>';
-                        node.parentNode.insertBefore(elem, node.nextSibling);
-                    }, true);
-                } catch (e) {
-                    // alert("oops!"+e);
-                }
+                    (function(node){
+                        try {
+                            doAjaxRequest("http://acao-0x588.herokuapp.com/acao/gelbooru.com/index.php?page=dapi&s=post&q=index&id=" + myurl[1], function (response) {
+                                var gelbooru_thumbnail = response.getElementsByTagName("post")[0].attributes["preview_url"].value;
+                                var gelbooru_id = response.getElementsByTagName("post")[0].attributes["id"].value;
+                                var elem = document.createElement("div");
+                                elem.setAttribute("style", "margin-top: 5px;");
+                                elem.innerHTML = '<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>';
+                                node.parentNode.insertBefore(elem, node.nextSibling);
+                            }, true);
+                        } catch (e) {
+                            //alert("oops!"+e);
+                        }
+                    })(node);
             } else if (myurl = /http:\/\/(\S+)fastpic\.ru\/big\/(\S+)\.(jpg|png|gif)/
                 .exec(node.href)) { // Fastpic.ru
                 var elem = document.createElement("div");
@@ -377,10 +440,10 @@ try {
                         }
                         then();
                     } catch (e) {
-                        window.alert(e);
+                        //window.alert(e);
                     }
                 }, 100)
-            })
+            }, false)
         } else {
             for(var i=existing.length-1; i>=0; i--) {
                 existing[i].parentNode.removeChild(existing[i]);
@@ -397,12 +460,16 @@ try {
             // run after original code
             //
             if (mode == "MESSAGES") {
-                var col = document.getElementById("column");
-                if (col && col.classList.length == 1) {
-                    if (col.classList[0] == "abs") {
-                        col.style.left = "668px";
-                    } else {
-                        col.style.left = "800px";
+                var content = document.getElementById("content");
+                if (content) {
+                    var col = document.getElementById("column");
+                    if (col && col.classList.length == 1) {
+                        if (col.classList[0] == "abs") {
+                            col.style.left = "668px";
+                        } else {
+                            var newLeft = getAbsoluteLeft(content) + content.offsetWidth - 12;
+                            col.style.left = newLeft + "px";
+                        }
                     }
                 }
             }
@@ -712,12 +779,16 @@ try {
             var a = msgts.getElementsByTagName("A")[0];
             var date = a.innerHTML;
             var links = message.getElementsByClassName("msg-links")[0];
-
-            msgts.style.display = "none";
-            var theSpan = message.ownerDocument.createElement("span");
-            theSpan.setAttribute("class","msg-ts");
-            theSpan.appendChild(message.ownerDocument.createTextNode(date));
-            links.appendChild(theSpan);
+            if (!links) {
+                links = message.getElementsByClassName("msg-comments")[0];  // tree view
+            }
+            if (links) {
+                msgts.style.display = "none";
+                var theSpan = message.ownerDocument.createElement("span");
+                theSpan.setAttribute("class","msg-ts");
+                theSpan.appendChild(message.ownerDocument.createTextNode(date));
+                links.appendChild(theSpan);
+            }
 
         }
         if (doInlineMedia)
@@ -850,7 +921,7 @@ try {
         //
         // fixing missing comment self-link
         //
-        links = document.getElementsByClassName("msg-links")
+        var links = document.getElementsByClassName("msg-links")
         for(var i=0; i<links.length; i++) {
             var linkz = links[i];
             var fc = linkz.firstChild;
@@ -906,7 +977,7 @@ try {
                         alert("mcn="+maybeCommentNo.length);
                     }
                 } catch(e) {
-                    alert("err="+e);
+                    //alert("err="+e);
                 }
             }
         }
@@ -964,7 +1035,7 @@ try {
                 ufa.firstChild.onclick();
             }
         } catch (e) {
-            alert("unfold:"+e);
+            //alert("unfold:"+e);
         }
     }
 
@@ -1028,7 +1099,7 @@ try {
                                 lastPart.lastA.href = lastPart2.lastA.getAttribute("href");
                             }
                         } catch (e) {
-                            window.alert(e);
+                            //window.alert(e);
                         }
                     });
                 } else {
@@ -1043,5 +1114,5 @@ try {
 
     fixColumnPosition()
 } catch (e) {
-    //alert("global: "+e);
+    alert("global: "+e);
 }
