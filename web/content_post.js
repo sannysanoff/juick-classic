@@ -5,7 +5,7 @@
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
 // @grant       none
-// @version     1.12
+// @version     1.13
 // ==/UserScript==
 
 // mozilla guid 41ee170c-9409-43b7-898d-c5de44b553db
@@ -494,6 +494,7 @@ try {
 
     var style = document.createElement("style");
     style.appendChild(document.createTextNode("a { color: #b07131; }"));
+    style.appendChild(document.createTextNode("#mtoolbar { width: 574px; }"));
 
     // make secondary toolbar not so big, so (at least initially) it looks not ugly.
     style.appendChild(document.createTextNode("div.title2 { width: 60%; }"));
@@ -605,6 +606,38 @@ try {
     }
 
     if (bright) {
+        // remove images from main header
+        var post = document.getElementById("hi-post");
+        var russian = false;
+        if (post) {
+            postText = getText(post.parentNode);
+            post.removeAttribute("class");
+            russian = postText == "Написать";
+            post.nextSibling.style.color = "#b07131";
+        }
+        var settings = document.getElementById("hi-settings");
+        if (settings) {
+            settings.removeAttribute("class");
+            setText(settings, russian ? "Настройки": "Settings");
+            settings.parentNode.style.color = "#b07131";
+        }
+        var logout = document.getElementById("hi-logout");
+        if (logout) {
+            logout.removeAttribute("class");
+            setText(logout,russian ? "Выйти": "Logout");
+            logout.parentNode.style.color = "#b07131";
+        }
+        // fix logo
+        var headIco = document.getElementById("hi-logo");
+        headIco.removeAttribute("class");
+        var newLogo = document.createElement("IMG");
+        newLogo.src = "http://static.juick.com/logo2.png";
+        newLogo.style.width = "120px";
+        newLogo.style.height = "40px";
+        newLogo.style.maxWidth = "120px";
+        newLogo.style.maxHeight = "40px";
+        headIco.appendChild(newLogo);
+
         // single message
         style.appendChild(document.createTextNode("li.msg { background: #eeeedf; }"));
         style.appendChild(document.createTextNode("#nav-right a { color: #b07131; font-weight: bold; }"));
@@ -613,6 +646,7 @@ try {
         style.appendChild(document.createTextNode("#header label { color: black; }"));
         // remove too much whitespace
         style.appendChild(document.createTextNode(".msg { padding: 3px;}"));
+        style.appendChild(document.createTextNode("html { background: #cbcb9c;}"));
         document.body.style.backgroundColor = "#cbcb9c";
     } else {
         style.appendChild(document.createTextNode("#mtoolbar { background: #31312f; }"));
@@ -622,6 +656,7 @@ try {
         // this is service toolbar
         style.appendChild(document.createTextNode("div { color: white; }"));
         style.appendChild(document.createTextNode("#hwrapper { background: #000000; }"));
+        style.appendChild(document.createTextNode("html { background: #31312f;}"));
         document.body.style.backgroundColor = "#31312f";
     }
 
@@ -654,9 +689,16 @@ try {
                 img.src = "http://ja.ip.rt.ru:8080/powered_by.png";
                 img.style.maxWidth = "94px";
                 img.style.marginBottom = "2px";
+                if (bright) {
+                    img.width = "0";
+                }
                 a.appendChild(img);
                 newLi.appendChild(a);
                 beforeLI.parentNode.insertBefore(newLi, beforeLI);
+                var search = document.getElementsByName("search");
+                if (search && search.length == 1 && search[0].nodeName.toLowerCase() == "input") {
+                    search[0].style.width = "185px";
+                }
             }
         }
     } catch (e) {
@@ -796,14 +838,15 @@ try {
     }
 
     function maybeAddImageButton(ta, msgid, rid) {
-        var existingImgLink = ta.nextSibling;
-        if (existingImgLink && existingImgLink.nodeName.toLowerCase() == "A") {
+        if (document.getElementById("postimage-"+rid) != null) {
             // already here
+            return false;
         } else {
             ta.style.width = rid != 0 ? "400px": "460px";
             var theA = document.createElement("A");
             theA.style.fontSize = "smaller";
             var theIMG = document.createElement("IMG");
+            theIMG.id = "postimage-"+rid;
             theIMG.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAACXBIWXMAAAsTAAALEwEAmpw"+
                 "YAAACkElEQVQ4EaWUOWgUYRSAdzaneMYD7yOgpEgQlUQrJYiiiIiiIAqWsdDGWpLa1iI2aljEINjYKMZCNIkgCiIIGgQtjGSDBwg"+
                 "iahKj6/fNzgyzy8K6+ODb/3r/e/87ZoNCoZD5HwmCYAf3G7HzqKIdHfwrGKiDZlgHp2EEZuEJ1FeyU9U4FwNogLmwE/phAr7DK7g"+
@@ -819,6 +862,7 @@ try {
             theIMG.style.background = "#FFFFFF";
             theA.href = "/post?body=%23"+msgid+(rid != 0? "/"+rid: "")+" ";
             ta.parentNode.insertBefore(theA, ta.nextSibling);
+            return true;
         }
     }
 
@@ -913,7 +957,16 @@ try {
         if (tas && msgid) {
             for(var i=0;i<tas.length; i++) {
                 if ("body" == tas[i].name) {
-                    maybeAddImageButton(tas[i],msgid, 0);
+                    (function(ta) {
+                        ta.addEventListener("focus", function() {
+                            window.setTimeout(function() {  // after button is added
+                                if (maybeAddImageButton(ta,msgid, 0)) {
+                                    var oldWidth = ta.offsetWidth;
+                                    ta.style.width = (oldWidth - 50)+"px";
+                                }
+                            }, 200);
+                        });
+                    })(tas[i])
                 }
             }
         }
@@ -933,7 +986,7 @@ try {
                 fc.nodeValue = lh;
                 var theA = linkz.ownerDocument.createElement("a");
                 theA.setAttribute("href", "#"+rid);
-                theA.appendChild(linkz.ownerDocument.createTextNode("/" + rid));
+                setText(theA, "/" + rid);
                 linkz.insertBefore(theA, linkz.firstChild);
 
                 //
@@ -948,9 +1001,10 @@ try {
                 for(var l=0; l<allLinks.length; l++) {
                     var linkText = getText(allLinks[l]);
                     if (linkText == "Comment" || linkText == "Ответить") {
-                        (function(oldProg, commentNode) {
+                        (function(oldProg, commentNode, theA, msgid, rid) {
                             allLinks[l].onclick = function() {
                                 oldProg();
+                                setText(theA, "#"+msgid+"/" + rid);
                                 var tas = commentNode.getElementsByTagName("textarea");
                                 if (tas && tas.length > 0) {
                                     var ta = tas[0];
@@ -958,7 +1012,7 @@ try {
                                 }
                                 return false;
                             }
-                        })(allLinks[l].onclick, linkz.parentNode);
+                        })(allLinks[l].onclick, linkz.parentNode, theA, msgid, rid);
                     }
                 }
             } else {
@@ -1114,5 +1168,5 @@ try {
 
     fixColumnPosition()
 } catch (e) {
-    alert("global: "+e);
+    //alert("global: "+e);
 }
