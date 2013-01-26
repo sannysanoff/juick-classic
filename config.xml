@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        id="http://juick.xez/JuickClassic" version="1.18">
+    <name>Juick Classic</name>
+    <description>Juick Classic extension for classic juick layout and stuff</description>
+    <author href="http://juick.com/SannySanoff/2179674"
+            email="san@sysdate.com">Sanny Sanoff</author>
+    <icon src="web/icon48.png"/>
+</widget>

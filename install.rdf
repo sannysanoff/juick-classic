@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+    <Description about="urn:mozilla:install-manifest">
+        <em:id>juick_classic@juick.xez</em:id>
+        <em:name>Juick Classic</em:name>
+        <em:type>2</em:type>
+        <em:version>1.18</em:version>
+        <em:description>Juick Classic Style</em:description>
+        <em:creator>Sanny Sanoff</em:creator>
+        <em:homepageURL>http://juick.com/SannySanoff/2179674</em:homepageURL>
+        <em:targetApplication>
+            <Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>4.0.*</em:minVersion>
+                <em:maxVersion>20.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+    </Description>
+</RDF>
