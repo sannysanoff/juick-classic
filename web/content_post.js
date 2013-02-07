@@ -2,16 +2,28 @@
 // @name        Juick Classic
 // @namespace   com.juickadvanced
 // @description Juick Classic Style
+// @require     http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
 // @grant       none
-// @version     1.19
+// @version     1.26
 // ==/UserScript==
+
+
+
+window.console.log("JA: launched")
 
 try {
 
     function main_process(document, window) {
         try {
+            var $=window.jQuery;
+            if (!document.body || !window.jQuery) {
+                window.console.log("JA: body is not ready or jquery is not ready");
+                window.setTimeout(function() {main_process(document, window)}, 10);
+                return;
+            }
+            window.console.log("JA: main_process")
             var mode = "UNKNOWN";
             var LIs = document.getElementsByTagName("LI");
             var globals = {}
@@ -158,7 +170,7 @@ try {
                             });
                         }
                     } catch (e) {
-                        document.title = "Sorry, unable to make XMLHttpRequest: "+e;
+                        //document.title = "Sorry, unable to make XMLHttpRequest: "+e;
                     }
                 }
 
@@ -166,11 +178,12 @@ try {
 
             function parseHTML(response) {
                 var doc = document.implementation.createHTMLDocument('');
+                var resp = ""+response;
                 if (firefox || opera) {
                     //
                     // HTML parsed like this is safe, because it's detached HTML (javascript is not executed etc), good for xpath though.
                     // I could not find other ways to parse HTML page for subsequent xpath querying in Firefox.
-                    doc.body.innerHTML = response;
+                    $(doc.body).html(response);
                 } else {
                     doc.write(response);
                 }
@@ -200,62 +213,62 @@ try {
                         .exec(node.href)) { // YouTube
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<object style="max-width: 560px; width: 100%; height: 340px;"><param name="movie" value="http://www.youtube.com/v/'
+                        $(elem).html('<object style="max-width: 560px; width: 100%; height: 340px;"><param name="movie" value="http://www.youtube.com/v/'
                             + tubeid[1]
                             + '&hl=ru_RU&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="wmode" value="transparent"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'
                             + tubeid[1]
-                            + '&hl=ru_RU&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" style="max-width: 560px; width: 100%; height: 340px;"></embed></object>';
+                            + '&hl=ru_RU&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" style="max-width: 560px; width: 100%; height: 340px;"></embed></object>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (tubeid = /youtu\.be\/(.+)/
                         .exec(node.href)) { // YouTube
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<object style="max-width: 560px; width: 100%; height: 340px;"><param name="movie" value="http://www.youtube.com/v/'
+                        $(elem).html('<object style="max-width: 560px; width: 100%; height: 340px;"><param name="movie" value="http://www.youtube.com/v/'
                             + tubeid[1]
                             + '&hl=ru_RU&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="wmode" value="transparent"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'
                             + tubeid[1]
-                            + '&hl=ru_RU&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" style="max-width: 560px; width: 100%; height: 340px;"></embed></object>';
+                            + '&hl=ru_RU&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" style="max-width: 560px; width: 100%; height: 340px;"></embed></object>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(\S+)radikal\.ru\/(\S+)\.(jpg|gif|png)/
                         .exec(node.href)) { // Radikal.ru
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
+                        $(elem).html('<a href="' + myurl[0]
                             + '"><img src="http://' + myurl[1]
                             + "radikal.ru/" + myurl[2]
-                            + 't.jpg" /></a>';
+                            + 't.jpg" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(\S{0,2})imgur\.com\/(\S+)\.(jpg|gif|png)/
                         .exec(node.href)) { // Imgur.com
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
+                        $(elem).html('<a href="' + myurl[0]
                             + '"><img src="http://' + myurl[1]
                             + "imgur.com/" + myurl[2]
-                            + 'l.' + myurl[3] + '" style="max-width: 100%; height: auto;"/></a>';
+                            + 'l.' + myurl[3] + '" style="max-width: 100%; height: auto;"/></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/img(\S+)imageshack\.us\/img(\S+)\.(jpg|gif|png)/
                         .exec(node.href)) { // ImageShack
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
+                        $(elem).html('<a href="' + myurl[0]
                             + '"><img src="http://img' + myurl[1]
                             + "imageshack.us/img" + myurl[2]
-                            + '.th.' + myurl[3] + '" /></a>';
+                            + '.th.' + myurl[3] + '" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/e-shuushuu\.net\/images\/(\d+)-(\d+)-(\d+)-(\d+)\.(\S+)/
                         .exec(node.href)) { // E-ShuuShuu.net
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="http://e-shuushuu.net/image/' + myurl[4]
+                        $(elem).html('<a href="http://e-shuushuu.net/image/' + myurl[4]
                             + '/"><img src="http://e-shuushuu.net/images/thumbs/' + myurl[1]
                             + "-" + myurl[2]+ "-" + myurl[3]+ "-" + myurl[4]
-                            + '.jpeg" /></a>';
+                            + '.jpeg" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/gelbooru\.com\/index\.php\?page=post\&s=view\&id=(\d+)/
@@ -267,7 +280,7 @@ try {
                                     var gelbooru_id = response.getElementsByTagName("post")[0].attributes["id"].value;
                                     var elem = document.createElement("div");
                                     elem.setAttribute("style", "margin-top: 5px;");
-                                    elem.innerHTML = '<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>';
+                                    $(elem).html('<a href="http://gelbooru.com/index.php?page=post&s=view&id=' + gelbooru_id + '"><img src="' + gelbooru_thumbnail + '" /></a>');
                                     node.parentNode.insertBefore(elem, node.nextSibling);
                                 }, true);
                             } catch (e) {
@@ -278,88 +291,88 @@ try {
                         .exec(node.href)) { // Fastpic.ru
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
+                        $(elem).html('<a href="' + myurl[0]
                             + '"><img src="http://' + myurl[1] + 'fastpic.ru/thumb/' + myurl[2]
-                            + '.jpeg" /></a>';
+                            + '.jpeg" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(\S{0,})rghost\.ru\/(\S+)\/image\.png/
                         .exec(node.href)) { // RGHost.ru
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://' + myurl[1] + 'rghost.ru/' + myurl[1] + '/thumb.png" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://' + myurl[1] + 'rghost.ru/' + myurl[1] + '/thumb.png" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(\S{0,})rghost\.ru\/(\S+)\.view/
                         .exec(node.href)) { // RGHost.ru
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://' + myurl[1] + 'rghost.ru/' + myurl[2] + '/thumb.png" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://' + myurl[1] + 'rghost.ru/' + myurl[2] + '/thumb.png" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(\S{0,})rghost\.ru\/(\S+)\.image/
                         .exec(node.href)) { // RGHost.ru
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://' + myurl[1] + 'rghost.ru/' + myurl[2] + '/thumb.png" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://' + myurl[1] + 'rghost.ru/' + myurl[2] + '/thumb.png" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(\S+)deviantart\.com\/art\/(\S+)-(\d+)/
                         .exec(node.href)) { // DeviantArt
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<object width="300" height="400"><param name="movie" value="http://backend.deviantart.com/embed/view.swf" /><param name="wmode" value="transparent"></param><param name="flashvars" value="id=' + myurl[3] + '&width=1337" /><param name="allowScriptAccess" value="always" /><embed src="http://backend.deviantart.com/embed/view.swf" type="application/x-shockwave-flash" width="500" flashvars="id=' + myurl[3] + '&width=1337" height="600" wmode="transparent" allowscriptaccess="always"></embed></object>';
+                        $(elem).html('<object width="300" height="400"><param name="movie" value="http://backend.deviantart.com/embed/view.swf" /><param name="wmode" value="transparent"></param><param name="flashvars" value="id=' + myurl[3] + '&width=1337" /><param name="allowScriptAccess" value="always" /><embed src="http://backend.deviantart.com/embed/view.swf" type="application/x-shockwave-flash" width="500" flashvars="id=' + myurl[3] + '&width=1337" height="600" wmode="transparent" allowscriptaccess="always"></embed></object>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/yfrog\.com\/(.*)/
                         .exec(node.href)) { // YFrog
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://yfrog.com/' + myurl[1] + '.th.jpg" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://yfrog.com/' + myurl[1] + '.th.jpg" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(www\.|)twitpic\.com\/(.*)/
                         .exec(node.href)) { // TwitPic
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://twitpic.com/show/thumb/' + myurl[2] + '" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://twitpic.com/show/thumb/' + myurl[2] + '" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/ipicture\.ru\/upload\/(\d+)(\/\d+|)\/(.+)\.(jpg|png|gif)/
                         .exec(node.href)) { // iPicture.ru
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://ipicture.ru/upload/' + myurl[1] + myurl[2] + '/thumbs/' + myurl[3] + '.' + myurl[4] + '" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://ipicture.ru/upload/' + myurl[1] + myurl[2] + '/thumbs/' + myurl[3] + '.' + myurl[4] + '" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(www.|)ljplus\.ru\/img4\/(.)\/(.)\/(.+)\/(.+)\.(jpg|gif|png)/
                         .exec(node.href)) { // LJPlus
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://www.ljplus.ru/img4/' + myurl[2] + '/' + myurl[3] + '/' + myurl[4] + '/th_' + myurl[5] + '.' + myurl[6] + '" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://www.ljplus.ru/img4/' + myurl[2] + '/' + myurl[3] + '/' + myurl[4] + '/th_' + myurl[5] + '.' + myurl[6] + '" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/(.+)\.imagehost\.org\/(.+).(jpg|png|gif)/
                         .exec(node.href)) { // ImageHost.org
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://' + myurl[1] + '.imagehost.org/t/' + myurl[2] + '.jpg" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://' + myurl[1] + '.imagehost.org/t/' + myurl[2] + '.jpg" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/omploader\.org\/(v|i)(.+)(\/.+|)/
                         .exec(node.href)) { // OMPLoader.org
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://omploader.org/t' + myurl[2] + '" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://omploader.org/t' + myurl[2] + '" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (myurl = /http:\/\/img(\S+)imageshack\.us\/i\/(\S+)\.(jpg|gif|png)/.exec(node.href)) { // ImageShack
@@ -369,23 +382,23 @@ try {
                     }else if ((myurl = node.href.match(/(.*)\.(jpg|gif|png|jpeg)/)) && full_image) { // If nothing can help
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="' + myurl[0] + '" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="' + myurl[0] + '" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if ((myurl = node.href.match(/http:\/\/pics\.livejournal\.com\/(.+)\/pic\/(.+)/)) && full_image) { // LJ Pics
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="' + myurl[0] + '" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="' + myurl[0] + '" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if ((myurl = /http:\/\/bayimg\.com\/(.+)/
                         .exec(node.href)) && full_image) { // BayImg
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + myurl[0]
-                            + '"><img src="http://bayimg.com/image/' + myurl[1].toLowerCase() + '.jpg" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>';
+                        $(elem).html('<a href="' + myurl[0]
+                            + '"><img src="http://bayimg.com/image/' + myurl[1].toLowerCase() + '.jpg" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     } else if (node.href.indexOf("i.juick.com") != -1) {
@@ -397,8 +410,8 @@ try {
                         //
                         var elem = document.createElement("div");
                         elem.setAttribute("style", "margin-top: 5px;");
-                        elem.innerHTML = '<a href="' + node.href
-                            + '"><img src="'+node.href+'" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>';
+                        $(elem).html('<a href="' + node.href
+                            + '"><img src="'+node.href+'" style="max-width: 500px; max-height: 400px; width: auto; height: auto;" /></a>');
                         node.parentNode.insertBefore(elem,
                             node.nextSibling);
                     }
@@ -412,7 +425,16 @@ try {
                     doAjaxRequest(url, function(response) {
                         window.setTimeout(function () {
                             try {
-                                var doc = parseHTML(response);
+                                console.log("got ajax response for inline comments")
+                                var resp = ""+response;
+                                var ix = resp.indexOf("<ul id=\"replies\">");
+                                if (ix != -1)
+                                    resp = resp.substr(ix);
+                                ix = resp.indexOf("<div id=\"footer\">");
+                                if (ix != -1) {
+                                    resp = resp.substr(0, ix);
+                                }
+                                var doc = parseHTML(resp);
                                 var comments = new Array();
                                 var dest = document.getElementById("msg-"+msgid);
                                 if (dest) {
@@ -437,9 +459,10 @@ try {
                                         }
                                     }
                                 }
+                                console.log("done inline comments")
                                 then();
                             } catch (e) {
-                                //window.alert(e);
+                                console.error(e)
                             }
                         }, 100)
                     }, false)
@@ -473,7 +496,7 @@ try {
                                 }
                             }
                         }
-                    }, 1);
+                    }, 500);
                 }
             }
 
@@ -1153,21 +1176,28 @@ try {
             }
 
             window.addEventListener("scroll", function () {
+                window.yandex_context_callbacks = [];   // slows opera down greatly
                 fixColumnPosition();
             });
 
             if (continousScroll) {
                 window.addEventListener("scroll", function () {
+                    //if (globals.lastScroll && new Date().getTime() - globals.lastScroll < 500) return;
+                    //globals.lastScroll = new Date().getTime();
+                    var content = document.getElementById("content");
+                    if (!content) return;
                     var nVScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                    //document.title = "SCROLL="+(nVScroll+window.innerHeight)+" BODYHEI="+document.body.offsetHeight+" SIGN="+(nVScroll + window.innerHeight - (document.body.offsetHeight - window.innerHeight * 4))+" ";
+                    var contentHeight = content.offsetHeight;
+                    //window.document.title = "SCROLL="+(nVScroll+window.innerHeight)+" BODYHEI="+contentHeight+" SIGN="+(nVScroll + window.innerHeight - (contentHeight - window.innerHeight * 4))+" ";
                     try {
-                        if (nVScroll + window.innerHeight > document.body.offsetHeight - window.innerHeight * 4) {
-                            // two pages in advance
+                        if (nVScroll + window.innerHeight > contentHeight - window.innerHeight * 4) {
+                            // 4 pages in advance
                             if (globals.loading) return;
                             globals.loading = true;
                         } else {
                             return;
                         }
+                        // prevent repeated load (if some exception happens)
                         var lastPart = findLastPart(document);
                         if (lastPart != null) {
                             setText(lastPart.lastA,"Loading next...");
@@ -1192,7 +1222,12 @@ try {
                                 try {
                                     globals.loading = false;
                                     setText(lastPart.lastA,"Older...");
-                                    var doc = parseHTML(response);
+                                    var resp = ""+response;
+                                    ix = resp.indexOf("<div id=\"footer\">");
+                                    if (ix != -1) {
+                                        resp = resp.substr(0, ix);
+                                    }
+                                    var doc = parseHTML(resp);
                                     var msgs = collectMessages(doc);
                                     for (var i in msgs) {
                                         var message = msgs[i];
@@ -1227,7 +1262,7 @@ try {
 
             fixColumnPosition()
         } catch (e) {
-            //alert("main function: "+e);
+            window.console.log("JA: main function: "+e)
         }
     }
 
@@ -1241,18 +1276,41 @@ try {
                 return;
             }
             this.juick_classic_initialized = true;
-            document.getElementById("appcontent")
-                .addEventListener("DOMContentLoaded", function(event) {
-                    var doc = event.originalTarget;
-                    if(doc.location.host == "juick.com" || doc.location.host == "dev.juick.com") {
-                        main_process(doc, window);
-                    }
-                }, true);
+            try {
+                document.getElementById("appcontent")
+                    .addEventListener("DOMContentLoaded", function (event) {
+                        // FF addon mode
+                        var doc = event.originalTarget;
+                        if (doc.location.host == "juick.com" || doc.location.host == "dev.juick.com") {
+                            main_process(doc, window);
+                        }
+                    }, true);
+            } catch (e) {
+                // FF greasemonkey mode
+                main_process(window.document, window);
+            }
         }, false);
+    } else if (opera) {
+        try {
+            opera.extension.onmessage = function (e) {
+                // opera extension mode
+                if (e.data.action === 'jc_load_jquery') {
+                    var script = document.createElement('script');
+                    script.appendChild(document.createTextNode(e.data.script));
+                    document.head.appendChild(script);
+                    console.log('juick classic: added jquery script to page: jQuery='+window.jQuery);
+                }
+            }
+        } finally {
+            // opera tampermonkey and opera extension
+            main_process(window.document, window);
+        }
     } else {
-        main_process(document, window);
+        // chrome
+        main_process(window.document, window);
     }
 
 } catch(e) {
-    alert("Main: "+e);
+    window.console.error("JA error: "+e);
+    //alert("Main: "+e);
 }

@@ -1,7 +1,7 @@
 {
     "name": "Juick Classic",
     "manifest_version": 2,
-    "version": "1.18",
+    "version": "1.26",
     "description": "Juick Classic extension for classic juick layout and stuff",
     "icons": { "48": "icon48.png", "128": "icon128.png" },
     "background": "background.html",
@@ -16,7 +16,7 @@
         },
         {
             "all_frames": true,
-            "js": [ "content_post.js" ],
+            "js": [ "jquery.min.js", "content_post.js" ],
             "matches": [ "http://juick.com/*", "https://juick.com/*", "http://dev.juick.com/*", "https://dev.juick.com/*" ]
         }
 
