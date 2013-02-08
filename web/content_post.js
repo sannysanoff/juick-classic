@@ -2,13 +2,12 @@
 // @name        Juick Classic
 // @namespace   com.juickadvanced
 // @description Juick Classic Style
-// @require     http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js
+// @require     http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
 // @grant       none
-// @version     1.26
+// @version     1.27
 // ==/UserScript==
-
 
 
 window.console.log("JA: launched")
@@ -66,6 +65,7 @@ try {
                 var exdate = new Date();
                 exdate.setDate(exdate.getDate() + exdays);
                 var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+                // is there other way of setting cookie?
                 document.cookie = c_name + "=" + c_value;
             }
 
@@ -111,7 +111,7 @@ try {
                 try {
                     var req;
                     if (opera) req = new window.XMLHttpRequest(); else req = new XMLHttpRequest();
-                    req.open("GET", url);
+                    req.open("GET", url, true);
                     req.onload = function () {
                         try {
                             if (wantXML) {
@@ -120,7 +120,7 @@ try {
                                 callback(req.responseText);
                             }
                         } catch (e) {
-                            //alert("doAjaxRequest: "+e);
+                            alert("doAjaxRequest: "+e);
                         }
                     }
                     req.send();
@@ -177,17 +177,48 @@ try {
             }
 
             function parseHTML(response) {
-                var doc = document.implementation.createHTMLDocument('');
+                var docu = null;
                 var resp = ""+response;
-                if (firefox || opera) {
+                if (firefox && Components && Components.classes) {
+                    // firefox addon mode
+                    try {
+                        const PARSER_UTILS = "@mozilla.org/parserutils;1";
+                        var newDoc = document.implementation.createHTMLDocument('')
+                        if (PARSER_UTILS in Components.classes) {
+
+                            var parser = Components.classes[PARSER_UTILS].getService(Ci.nsIParserUtils);
+                            if ("parseFragment" in parser) {
+                                docu = parser.parseFragment(response, true,
+                                    false, null, document.documentElement);
+                                newDoc.body.appendChild(docu);
+                                docu = newDoc;
+                            }
+                        }
+                        if (!docu) {
+                            docu = Components.classes["@mozilla.org/feed-unescapehtml;1"]   // fallback snippet from mozilla
+                                .getService(Components.interfaces.nsIScriptableUnescapeHTML)
+                                .parseFragment(html, false, null, document.documentElement);
+                            newDoc.body.appendChild(docu);
+                            docu = newDoc;
+                        }
+                    } catch (e) {
+                        alert(e);
+                    }
+                } else if (firefox) {
+                    // firefox in greasemonkey mode
+                    var parser = new DOMParser();
+                    docu = parser.parseFromString(response, "text/html");
+                } else if (opera) {      // firefox in greasemonkey mode
+                    docu = document.implementation.createHTMLDocument('')
                     //
                     // HTML parsed like this is safe, because it's detached HTML (javascript is not executed etc), good for xpath though.
                     // I could not find other ways to parse HTML page for subsequent xpath querying in Firefox.
-                    $(doc.body).html(response);
+                    $(docu.body).html(response);
                 } else {
-                    doc.write(response);
+                    docu = document.implementation.createHTMLDocument('')
+                    docu.write(response);
                 }
-                return doc;
+                return docu;
             }
 
             // (C) power juick
@@ -855,9 +886,6 @@ try {
                         if (arabCount > russCount && arabCount > 10) {
                             message.style.display = "none";
                         }
-                        if (msgid == "2200126") {
-                            // alert("PSTO: "+msgid+" arabs="+arabCount+" arra="+codes);
-                        }
                     }
 
 
@@ -1295,6 +1323,7 @@ try {
             opera.extension.onmessage = function (e) {
                 // opera extension mode
                 if (e.data.action === 'jc_load_jquery') {
+                    // opera only!!
                     var script = document.createElement('script');
                     script.appendChild(document.createTextNode(e.data.script));
                     document.head.appendChild(script);

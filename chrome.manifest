@@ -1,2 +1,2 @@
-content	juickclassic	.
+content	juickclassic	./
 overlay	chrome://browser/content/browser.xul	chrome://juickclassic/content/overlay.xul
