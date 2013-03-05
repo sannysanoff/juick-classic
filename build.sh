@@ -26,6 +26,11 @@ rm -rf /tmp/web
 mkdir /tmp/web
 cp web/content_post.js web/jquery*.js /tmp/web
 cd /tmp
+sed -i 's@//FIREFOX_CUT_START@#if 0@g' web/content_post.js
+sed -i 's@//FIREFOX_CUT_END@#endif@g' web/content_post.js
+cpp -P -C web/content_post.js web/content_post.js.out
+mv web/content_post.js.out web/content_post.js
+cp web/content_post.js /tmp/aaa.js
 zip -r $FF_OUT overlay.xul chrome.manifest install.rdf web
 cd -
 rm -rf /tmp/web
