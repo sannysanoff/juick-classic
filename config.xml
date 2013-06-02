@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets"
         id="http://juick.com/SannySanoff/2179674"
-        version = "1.28">
+        version = "1.36">
     <name>Juick Classic</name>
     <description>Juick Classic extension for classic juick layout and stuff</description>
     <author href="http://juick.com/SannySanoff/2179674"

@@ -26,8 +26,8 @@ rm -rf /tmp/web
 mkdir /tmp/web
 cp web/content_post.js web/jquery*.js /tmp/web
 cd /tmp
-sed -i 's@//FIREFOX_CUT_START@#if 0@g' web/content_post.js
-sed -i 's@//FIREFOX_CUT_END@#endif@g' web/content_post.js
+sed -i 's@.*FIREFOX_CUT_START@#if 0@g' web/content_post.js
+sed -i 's@.*FIREFOX_CUT_END@#endif@g' web/content_post.js
 cpp -P -C web/content_post.js web/content_post.js.out
 mv web/content_post.js.out web/content_post.js
 cp web/content_post.js /tmp/aaa.js
@@ -43,6 +43,7 @@ mkdir -p /tmp/oex/scripts
 cp config.xml web/icon48.png index.html /tmp/oex
 cp web/content_post.js /tmp/oex/includes/script.js
 cp web/icon48.png web/popup.html web/jquery.min.js  /tmp/oex/web
+cp web/jquery.min.js  /tmp/oex/includes
 cp scripts/opera_background.js /tmp/oex/scripts/
 cd /tmp/oex
 zip -r $OPERA_OUT config.xml index.html web includes scripts
