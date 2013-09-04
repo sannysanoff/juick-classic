@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameReferencedOnce="false" version="3" compilerSelect="AUTO" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="EventSoundsProjectComponent">
+    <option name="_breakpointSoundEnabled" value="true" />
+    <option name="_buildErrorSoundEnabled" value="true" />
+    <option name="_buildSuccessSoundEnabled" value="true" />
+    <option name="_buildWarningSoundEnabled" value="true" />
+    <option name="_exceptionSoundEnabled" value="true" />
+    <option name="_findFailedSoundEnabled" value="true" />
+    <option name="_findSuccessSoundEnabled" value="true" />
+    <option name="_processStoppedSoundEnabled" value="true" />
+    <option name="_breakpointSound" value="/com/lgc/eventsounds/sounds/breakpoint.wav" />
+    <option name="_buildErrorSound" value="/com/lgc/eventsounds/sounds/buildError.wav" />
+    <option name="_buildSuccessSound" value="/com/lgc/eventsounds/sounds/buildSuccess.wav" />
+    <option name="_buildWarningSound" value="/com/lgc/eventsounds/sounds/buildWarning.wav" />
+    <option name="_exceptionSound" value="/com/lgc/eventsounds/sounds/exception.wav" />
+    <option name="_findFailedSound" value="/com/lgc/eventsounds/sounds/findFailed.wav" />
+    <option name="_findSuccessSound" value="/com/lgc/eventsounds/sounds/findSuccess.wav" />
+    <option name="_processStoppedSound" value="/com/lgc/eventsounds/sounds/processStopped.wav" />
+  </component>
+  <component name="IdProvider" IDEtalkID="22261BDA88301B1AF6B8970E287DE240" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
+

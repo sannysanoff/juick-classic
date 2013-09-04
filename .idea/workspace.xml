@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="extension:Web exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1758" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1503" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1097" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="37" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/content_post.js" afterPath="$PROJECT_DIR$/web/content_post.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install.rdf" afterPath="$PROJECT_DIR$/install.rdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/manifest.json" afterPath="$PROJECT_DIR$/web/manifest.json" />
+    </list>
+    <ignored path="extension.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="$PROJECT_DIR$/META-INF/application.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356595667359" ignored="false" />
+    <file path="/Jaext.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356603846227" ignored="false" />
+    <file path="/Jaext.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356603244995" ignored="false" />
+    <file path="/Dummy.txt" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378221553808" ignored="false" />
+    <file path="/manifest.json" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356618728569" ignored="false" />
+    <file path="/background.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356603746820" ignored="false" />
+    <file path="/content.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362520445889" ignored="false" />
+    <file path="/content_post.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378238841212" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/project.properties" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268501984" ignored="false" />
+    <file path="/Juick_Classic.user.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367842442288" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/web/WEB-INF/web.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367832440170" ignored="false" />
+    <file path="/web.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367832439675" ignored="false" />
+    <file path="/fragment.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370682011508" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/PoweredByServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888726968" ignored="false" />
+    <file path="/PoweredByServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888476904" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/MongoDB.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888402456" ignored="false" />
+    <file path="/MongoDB.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888319416" ignored="false" />
+    <file path="/a.dummy" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378226468910" ignored="false" />
+    <file path="/fragment.js2" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362522276766" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/web/charts/JuickCharts2/EXTXMPP_USERS.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357231574049" ignored="false" />
+    <file path="/EXTXMPP_USERS.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357231143549" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/web/charts/JuickCharts2/EXTXMPP_USERS.plot" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357231664108" ignored="false" />
+    <file path="/EXTXMPP_USERS.plot" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357231664108" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/xmpp/SocketPool.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357411850500" ignored="false" />
+    <file path="/SocketPool.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357411808928" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/xmpp/XMPPControlServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357233942604" ignored="false" />
+    <file path="/XMPPControlServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357233770622" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/utils/ExecUtils.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357233261788" ignored="false" />
+    <file path="/ExecUtils.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357233261053" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/web/mgmt/ext_xmpp_status.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357235416142" ignored="false" />
+    <file path="/ext_xmpp_status.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357235235568" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/Plotting.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357235144807" ignored="false" />
+    <file path="$PROJECT_DIR$/../common/src/com/juickadvanced/parsers/DevJuickComMessages.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357406799069" ignored="false" />
+    <file path="/DevJuickComMessages.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357406786990" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/juick/JuickMicroBlog.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357406964960" ignored="false" />
+    <file path="/Pool.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357411894820" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/xmpp/Pool.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357411894820" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/xmpp/JabberConnection.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357408304846" ignored="false" />
+    <file path="/JabberConnection.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357408283583" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/XMPPService.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357596304548" ignored="false" />
+    <file path="/XMPPService.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357596303060" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/res/xml/prefs_xmpp.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357413215535" ignored="false" />
+    <file path="/prefs_xmpp.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357413007153" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/res/values/strings.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362698024694" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/res/values-ru/strings.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362698052110" ignored="false" />
+    <file path="/strings.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362698052110" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/XMPPIncomingMessagesActivity.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357584510265" ignored="false" />
+    <file path="/XMPPIncomingMessagesActivity.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357584486068" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/pdfw/gwt2/client/pdfweditor/IPadEditor.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358355839408" ignored="false" />
+    <file path="/IPadEditor.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358355284133" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/pdfw/gwt2/PDFW.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358357885575" ignored="false" />
+    <file path="/PDFW.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358357878616" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/pdfw/gwt2/client/pdfweditor/TabletEditor2.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358360925976" ignored="false" />
+    <file path="/TabletEditor2.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358360925321" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/impl/ScrollPanelNewPort.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356358221" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/impl/ScrollPanelBackup.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356456778" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/util/CssUtil.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358360598692" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/mvp/client/history/MGWTPlaceHistoryHandler.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/OsDetection.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/MGWTSettings.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/mvp/client/Animation.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/ScrollPanel.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356927771" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/theme/MGWTTheme.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/LayoutPanel.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/collection/GwtCollections.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/MGWTStyle.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/theme/MGWTClientBundle.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/mvp/client/AnimatingActivityManager.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/collection/shared/LightArray.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/collection/shared/LightArrayInt.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/collection/shared/CollectionFactory.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/linker/server/propertyprovider/PropertyProviderBaseImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/storage/Storage.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/dialog/Dialogs.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/MGWT.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/linker/server/propertyprovider/MgwtOsPropertyProvider.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/HeaderButton.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/linker/server/propertyprovider/MobileUserAgentProvider.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/linker/Linker.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563552" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/linker/server/propertyprovider/PhoneGapPropertyProvider.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/HeaderPanel.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/dom/DOM.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/UI.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/mvp/MVP.gwt.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/MGWT.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358357123030" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/impl/ScrollPanelBlackberryImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/dom/client/event/touch/TouchMoveEvent.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/theme/base/ScrollPanelCss.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/dom/client/event/touch/TouchEvent.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/dom/client/event/touch/TouchMoveHandler.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/base/ButtonBase.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/dom/client/event/animation/TransitionEndEvent.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/touch/TouchDelegate.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/dom/client/event/touch/Touch.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/impl/ScrollPanelIE9Impl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/impl/ScrollPanelImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356563553" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/widget/impl/ScrollPanelTouchImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358363588409" ignored="false" />
+    <file path="/ScrollPanel.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356927112" ignored="false" />
+    <file path="/ScrollPanelTouchImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358360912622" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/pdfw/gwt2/client/site/editor/EditorActivity.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358356963047" ignored="false" />
+    <file path="/MGWT.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358357120536" ignored="false" />
+    <file path="/LoginView.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358358136961" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/pdfw/gwt2/client/site/login/LoginView.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358358175303" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/src/com/googlecode/mgwt/ui/client/util/impl/WebkitCssUtilImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358363171770" ignored="false" />
+    <file path="/WebkitCssUtilImpl.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358363036409" ignored="false" />
+    <file path="$PROJECT_DIR$/../../pdfw/web/iscroll.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358362952225" ignored="false" />
+    <file path="/iscroll.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1358362899973" ignored="false" />
+    <file path="/install.rdf" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359201914568" ignored="false" />
+    <file path="/chrome.manifest" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359202661928" ignored="false" />
+    <file path="/overlay.xul" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360236488167" ignored="false" />
+    <file path="/about.xul" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359202210968" ignored="false" />
+    <file path="/build.sh" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360256682859" ignored="false" />
+    <file path="/config.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359220153743" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/gwt/war/WEB-INF/tags/footer.tag" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359231041354" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/gwt/src/com/savvytone/app/gwt/main/client/pages/SubscriptionUI.ui.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359228479462" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/src/com/savvytone/app/MyPreferencesActivity.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230789293" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/src/com/savvytone/app/utils/ShakeDetector.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368632856213" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/src/com/savvytone/app/plugins/contactlist/PhoneBookPlugin.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230789293" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/res/xml/preferences.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230789293" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/AndroidManifest.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368633981555" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/gwt/war/home.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359235798467" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/res/menu/mysettings_menu.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230854961" ignored="false" />
+    <file path="/mysettings_menu.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230854514" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/res/xml/preferences2.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230891745" ignored="false" />
+    <file path="/preferences2.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359230887458" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/src/com/savvytone/app/MainActivity.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359231160876" ignored="false" />
+    <file path="/MainActivity.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359231160876" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/build.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368633981555" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/bin/AndroidManifest.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1359279415357" ignored="false" />
+    <file path="/opera_background.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360253114730" ignored="false" />
+    <file path="/index.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360251620971" ignored="false" />
+    <file path="/popup.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360252016601" ignored="false" />
+    <file path="$USER_HOME$/tmp/adda/src/Adda.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360285029382" ignored="false" />
+    <file path="/Adda.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360284930850" ignored="false" />
+    <file path="/script.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360337237480" ignored="false" />
+    <file path="$PROJECT_DIR$/../../itl-barcode/itl-barcode-android/res/raw/config.json" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362697882786" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/gen/com/juickadvanced/R.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362697888192" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/res/xml/prefs_other.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362698024694" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Arrays.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Progressions.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Collections.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Iterators.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Ranges.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Library.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Functions.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Unit.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Any.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Nothing.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Enum.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Numbers.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/ExtensionFunctions.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/web/charts/JuickCharts2/THEME_USAGE.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367827646667" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/ClassicAPIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378223377361" ignored="false" />
+    <file path="/ClassicAPIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370123679713" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/APIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370167018853" ignored="false" />
+    <file path="/APIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370123648401" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/res/values/arrays.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268370988" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/ja/JAUnansweredMessagesSource.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268393804" ignored="false" />
+    <file path="/JAUnansweredMessagesSource.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268393804" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/MessagesFragment.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268501984" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/JuickMessagesAdapter.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268501984" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/MyManagementViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370614200257" ignored="false" />
+    <file path="/MyManagementViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370614089095" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/project_support.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368652646480" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/java-api.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623413737" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/image_annotate.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370625340554" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/arrow.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370627052814" ignored="false" />
+    <file path="/arrow.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370627052814" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/gwt/src/config.properties" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368625672852" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/src/com/savvytone/lite/GCMIntentService.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368633981555" ignored="false" />
+    <file path="/MyListView.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368632714313" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/src/com/savvytone/app/utils/MyListView.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368632716008" ignored="false" />
+    <file path="/ShakeDetector.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368632853306" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/bin/classes.dex.d" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368633981555" ignored="false" />
+    <file path="$PROJECT_DIR$/../../savvytone/android/bin/proguard.txt" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368633981555" ignored="false" />
+    <file path="/image_annotate.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368646100173" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/MainViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623668187" ignored="false" />
+    <file path="$PROJECT_DIR$/../../isignature/lua_controller/src/san/LuaSyncController.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368636402618" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/MyAngleEntryViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368646118557" ignored="false" />
+    <file path="/MyAngleEntryViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368646118557" ignored="false" />
+    <file path="/MainViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623666797" ignored="false" />
+    <file path="/java-api.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368650251982" ignored="false" />
+    <file path="/project_support.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368652352750" ignored="false" />
+    <file path="$PROJECT_DIR$/../../itl/src/billing/proc/DataCenter.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368710753687" ignored="false" />
+    <file path="$PROJECT_DIR$/../../itl/resources/view_dc_hardware_log.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368726104940" ignored="false" />
+    <file path="/view_dc_hardware_log.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368726110457" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/MyStem.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370207453372" ignored="false" />
+    <file path="/MyStem.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370207445837" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/jui/TextIndexer.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370207334094" ignored="false" />
+    <file path="/TextIndexer.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370207332576" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/AppDelegate.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370622563841" ignored="false" />
+    <file path="/AppDelegate.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370618545752" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/ImageAnnotate/ImageAnnotate/TracingUIViewController.m" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623458602" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ipsc2013/src/main/TestP.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370680393643" ignored="false" />
+    <file path="/TestP.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370680386206" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ipsc2013/src/main/TestQ.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370682090657" ignored="false" />
+    <file path="/TestQ.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370682078340" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="extension" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="opera_background.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/opera_background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="18" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content_post.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/content_post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="512" column="35" selection-start="24286" selection-end="24286" vertical-scroll-proportion="0.36933047">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1378238958385" expanded="true" signature="17338:17383" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/content.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="17" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="a.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/tmp/a.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="icon48.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/icon48.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DOMCore.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="183" column="19" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="GwtCompilerConfiguration">
+    <show-output>
+      <module name="extension" />
+    </show-output>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/install.rdf" />
+        <option value="$PROJECT_DIR$/web/jquery.min.js" />
+        <option value="$PROJECT_DIR$/opera_background.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/web/popup.html" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/scripts/opera_background.js" />
+        <option value="$PROJECT_DIR$/build.sh" />
+        <option value="$PROJECT_DIR$/includes/script.js" />
+        <option value="$PROJECT_DIR$/chrome.manifest" />
+        <option value="$PROJECT_DIR$/web/content.js" />
+        <option value="$PROJECT_DIR$/web/manifest.json" />
+        <option value="$PROJECT_DIR$/web/tmp/a.js" />
+        <option value="$USER_HOME$/.mozilla/firefox/mwad0hks.default/gm_scripts/Juick_Classic/Juick_Classic.user.js" />
+        <option value="/tmp/1.js" />
+        <option value="$PROJECT_DIR$/web/content_post.js" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-3" />
+    <option name="y" value="25" />
+    <option name="width" value="1286" />
+    <option name="height" value="977" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="preferences.fileTypes" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ipsc2013" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GWT" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="extension" />
+      <option name="VM_PARAMETERS" value="-Xmx1256m" />
+      <option name="SHELL_PARAMETERS" value="-noserver" />
+      <option name="RUN_PAGE" value="Jaext/Jaext.html" />
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Tomcat 7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="extension:Web exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_extension" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58166" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="extension:Web exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="GWT Configuration.GWT" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" name="Default" comment="" />
+      <created>1356595525409</created>
+      <updated>1356595525409</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-3" y="25" width="1286" height="977" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3859649" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23984376" sideWeight="0.61403507" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="19" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="19" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="78" selection-start="80" selection-end="80" vertical-scroll-proportion="0.06185567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="531" selection-end="531" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.rdf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="6" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/opera_background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="18" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/icon48.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="19" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/tmp/a.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="367" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chrome.manifest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="17" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/content_post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="512" column="35" selection-start="24286" selection-end="24286" vertical-scroll-proportion="0.36933047">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1378238958385" expanded="true" signature="17338:17383" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>extension:Web exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>GWT</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>GWT|extension</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>gwt-user</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
