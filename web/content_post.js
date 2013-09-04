@@ -6,16 +6,28 @@
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
 // @grant       none
-// @version     1.37
+// @version     1.39
 // ==/UserScript==
 
 // commit checklist:
 // 1. verify scrolling menu abs/fix position
 
+function jalog(str) {
+    if (Application && Application.console && Application.console.log) {
+        Application.console.log(str)
+        window.alert("withapp: "+str);
+    } else {
+        if (window.console)
+            window.console.log(str);
+        if (console)
+            console.log(str);
+        window.alert(str);
+    }
+}
 
-window.console.log("JA: launched!")
+jalog("JA: launched!")
 var ua = window.navigator.userAgent;
-window.console.log("window.navigator.userAgent=" + ua)
+jalog("window.navigator.userAgent=" + ua)
 var firefox = ua.indexOf("Gecko") != -1 && ua.indexOf("like Gecko") == -1;
 var isOpera = ua.indexOf("Presto") != -1;
 var originalTop = -1;
@@ -23,29 +35,33 @@ var jaiprtru = "https://ja.ip.rt.ru:8443/"
 //var jaiprtru = "http://localhost:8080/"
 
 try {
-    if (window.document["jc_processed"])
+    if (window.document.getElementById("powered_by_juick_classic"))
         throw "Document already processed by juick classic "
-    window.document.jc_processed = true;
+//    window.document.jc_processed = true;
+    window.addEventListener("message", function (event) {
+        if (event.data.callbackId) {
+            window[event.data.callbackId](event.data.data);
+        }
+    }, false)
     console.log("main_process definitiion begin")
     function main_process(document, window) {
-        window.console.log("JA: launched!")
+        jalog("JA: launched!")
 
         try {
             var $ = window.jQuery;
             if (!document.body || !window.jQuery) {
-                window.console.log("JA: body is not ready or jquery is not ready");
+                jalog("JA: body is not ready or jquery is not ready");
                 window.setTimeout(function () {
                     main_process(document, window)
                 }, 10);
                 return;
             }
 
-            if (window.document["jc_mainprocessed"]) {
-                window.console.log("jc_mainprocessed duplicate!")
+            if (window.document.getElementById("powered_by_juick_classic")) {
+                jalog("jc_mainprocessed duplicate!")
                 return;
             }
-            window.document.jc_mainprocessed = true;
-            window.console.log("JA: continued with jquery!")
+            jalog("JA: continued with jquery!")
             if (isOpera || firefox) {
                 window.setInterval(function () {
                     if (!!$("#column").offset()) {
@@ -81,7 +97,7 @@ try {
                 }, 50)  // fast enough
             }
 
-            window.console.log("JA: main_process")
+            jalog("JA: main_process")
             var mode = "UNKNOWN";
             var shouldCheckMessageOrder = true;
             var LIs = document.getElementsByTagName("LI");
@@ -162,7 +178,7 @@ try {
             function convertDate(juickDate) {
                 // input juick date: 2013-06-02 07:19:11.0 GMT
                 // output javascript default date format (mostly):  "Sun Jun 02 2013 10:40:36 GMT+0300 (EEST)"
-                var months = ["Jun","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
                 var month = months[parseInt(juickDate.substr(6, 8))-1]; // convert month
                 var result = month + " ";
                 result += juickDate.substr(8, 2) +" ";  // date
@@ -233,7 +249,7 @@ try {
                                 callback(req.responseText);
                             }
                         } catch (e) {
-                            window.console.log("JA(2): " + e)
+                            jalog("JA(2): " + e)
                             alert("doAjaxRequest: " + e);
                         } finally {
                             requestInProgress = false;
@@ -270,7 +286,7 @@ try {
                                             callback(response);
                                         }
                                     } catch (e) {
-                                        window.console.log("JA(3): " + e)
+                                        jalog("JA(3): " + e)
                                         //alert("GM_xmlhttpRequest: "+e+" response="+response+" resp.rx="+respo);
                                     } finally {
                                         requestInProgress = false;
@@ -288,7 +304,7 @@ try {
                             });
                         }
                     } catch (e) {
-                        window.console.log("JA(4): " + e)
+                        jalog("JA(4): " + e)
                         //document.title = "Sorry, unable to make XMLHttpRequest: "+e;
                     }
                 }
@@ -308,16 +324,14 @@ try {
             function parseHTML(response) {
                 var docu = null;
                 var resp = "" + response;
-                window.console.log("Trying comps");
                 var comps = null;
                 try {
                     comps = Components;
                 } catch (e) { /* not found; */
                 }
-                window.console.log("Done trying comps");
                 if (firefox && comps && firefoxAddon(comps)) {
                     // firefox addon mode
-                    window.console.log("firefox addon mode");
+//                    jalog("firefox addon mode");
                     try {
                         const PARSER_UTILS = "@mozilla.org/parserutils;1";
                         var newDoc = document.implementation.createHTMLDocument('')
@@ -339,17 +353,17 @@ try {
                             docu = newDoc;
                         }
                     } catch (e) {
-                        window.console.log("JA(5): " + e)
+                        jalog("JA(5): " + e)
                         alert(e);
                     }
                 } else if (firefox) {
-                    window.console.log("firefox gm mode");
+                    jalog("firefox gm mode");
                     // firefox in greasemonkey mode
                     var parser = new DOMParser();
                     docu = parser.parseFromString(response, "text/html");
                 } else if (isOpera) {
                     //FIREFOX_CUT_START
-                    window.console.log("opera mode");
+                    jalog("opera mode");
                     docu = document.implementation.createHTMLDocument('')
                     //
                     // HTML parsed like this is safe, because it's detached HTML (javascript is not executed etc), good for xpath though.
@@ -357,7 +371,7 @@ try {
                     $(docu.body).html(response);
                     //FIREFOX_CUT_END
                 } else {
-                    window.console.log("chrome possibly?");
+                    jalog("chrome possibly?");
                     docu = document.implementation.createHTMLDocument('')
                     docu.write(response);
                 }
@@ -415,7 +429,7 @@ try {
                     } else if (tubeid = /youtu\.be\/(.+)/
                         .exec(node.href)) { // YouTube
                         node.parentNode.insertBefore(createYoutube(tubeid[1]), node.nextSibling);
-                    } else if (myurl = /http:\/\/gelbooru\.com\/index\.php\?page=post\&s=view\&id=(\d+)/
+                    } else if (myurl = /gelbooru\.com\/index\.php\?page=post\&s=view\&id=(\d+)/
                         .exec(node.href)) { // Gelbooru
                         (function (node) {
                             try {
@@ -428,7 +442,7 @@ try {
                                     node.parentNode.insertBefore(elem, node.nextSibling);
                                 }, true);
                             } catch (e) {
-                                window.console.log("JA(6): " + e)
+                                jalog("JA(6): " + e)
                                 //alert("oops!"+e);
                             }
                         })(node);
@@ -462,7 +476,7 @@ try {
                     doAjaxRequest(url, function (response) {
                         window.setTimeout(function () {
                             try {
-                                window.console.log("got ajax response for inline comments")
+                                // jalog("got ajax response for inline comments")
                                 var resp = "" + response;
                                 var ix = resp.indexOf("<ul id=\"replies\">");
                                 if (ix != -1)
@@ -496,10 +510,10 @@ try {
                                         }
                                     }
                                 }
-                                window.console.log("done inline comments")
+                                // jalog("done inline comments")
                                 then();
                             } catch (e) {
-                                window.console.log("JA(7): " + e)
+                                jalog("JA(7): " + e)
                             }
                         }, 100)
                     }, false, true)
@@ -571,28 +585,37 @@ try {
 
             function callJA(url, data, callback, indicatorPeer) {
                 if (getCookie("jaconf") == "1") {
-                    var img = null;
                     if (indicatorPeer) {
-                        img = document.createElement("img");
-                        img.style.height = "12pt";
-                        img.src = "data:image/gif;base64,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";
-                        indicatorPeer.parentNode.insertBefore(img, indicatorPeer.nextSibling);
+                        if (!indicatorPeer.indicator) {
+                            indicatorPeer.indicator = document.createElement("img");
+                            indicatorPeer.indicator.style.height = "12pt";
+                            indicatorPeer.indicator.src = "data:image/gif;base64,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";
+                            indicatorPeer.parentNode.insertBefore(indicatorPeer.indicator, indicatorPeer.nextSibling);
+                        } else {
+                            return;     // already running
+                        }
                     }
                     data.hash = getCookie("hash")
-                    document.head.onclick = function(cb,data) {
-                        //window.alert("morraCallback2 cb="+window[cb]+" data="+data);
-                        if (img) {
-                            img.parentNode.removeChild(img);
+                    var scriptel = document.createElement("script");
+                    var cb = "jacb_"+(new Date().getTime())
+                    window[cb] = function(arg) {
+                        if (indicatorPeer.indicator && indicatorPeer.indicator.parentNode) {
+                            indicatorPeer.indicator.parentNode.removeChild(indicatorPeer.indicator);
+                            indicatorPeer.indicator = null;
                         }
-                        window[cb](data);
-                    };
-                    $.ajax({
-                        url: jaiprtru + url,
-                        dataType: "jsonp",
-                        crossDomain: true,
-                        data: data,
-                        success: callback
-                    });
+                        try {
+                            callback(arg);
+                        } finally {
+                            window[cb] = null;
+                            document.head.removeChild(scriptel);
+                        }
+                    }
+                    var src = jaiprtru + url + "?callback="+cb
+                    for(var i in data) {
+                        src = src + "&" + i + "="+encodeURIComponent(data[i]);
+                    }
+                    scriptel.src = src;
+                    document.head.appendChild(scriptel);
                 } else {
                     if (confirm("ВНИМАНИЕ! Это действие требует подтверждения того, что вы *доверяете* третьему участнику (серверу Juick Advanced) - ваш ключ будет использован одноразово для осуществления вашей идентификации в целях предотвращения нецелевого использования. Трафик на этот сервер идет через защищенное соединение (https). ")) {
                         setCookie("jaconf","1");
@@ -1028,6 +1051,7 @@ try {
                         var img = document.createElement("img");
                         img.src = "http://ja.ip.rt.ru:8080/powered_by.png";
                         img.style.maxWidth = "94px";
+                        img.id = "powered_by_juick_classic";
                         img.style.marginBottom = "2px";
                         if (theme == "bright" || theme == "gray") {
                             img.width = "0";
@@ -1042,7 +1066,7 @@ try {
                     }
                 }
             } catch (e) {
-                window.console.log("JA(8): " + e)
+                jalog("JA(8): " + e)
             }
 
             if (mode == "THREAD") {
@@ -1444,7 +1468,7 @@ try {
                                     alert("mcn=" + maybeCommentNo.length);
                                 }
                             } catch (e) {
-                                window.console.log("JA(9): " + e)
+                                jalog("JA(9): " + e)
                             }
                         }
                     }
@@ -1649,7 +1673,7 @@ try {
                         ufa.firstChild.onclick();
                     }
                 } catch (e) {
-                    window.console.log("JA(10): " + e)
+                    jalog("JA(10): " + e)
                     //alert("unfold:"+e);
                 }
             }
@@ -1736,7 +1760,7 @@ try {
                                         arclones[i].parentNode.removeChild(arclones[i]);
                                     }
                                 } catch (e) {
-                                    window.console.log("JA(11): " + e)
+                                    jalog("JA(11): " + e)
                                     //window.alert(e);
                                 }
                             }, false);
@@ -1744,7 +1768,7 @@ try {
                             //window.alert("Last part is null");
                         }
                     } catch (e) {
-                        window.console.log("JA(12): " + e)
+                        jalog("JA(12): " + e)
                     }
                 });
 
@@ -1757,20 +1781,20 @@ try {
                 window.alert("Опции Juick Classic встроены в страницу настроек Жуйка. Все опции по умолчанию отключены. Приятного пользования.")
             }
 
-            window.console.log("main function ended")
+            jalog("main function ended")
 
 
 
         } catch (e) {
-            window.console.log("JA: main function: " + e)
+            jalog("JA: main function: " + e)
             window.alert("JA: main function: " + e)
         }
     }
 
-    window.console.log("main_process definitiion end")
+    jalog("main_process definitiion end")
 
     if (firefox) {
-        window.console.log("launch process: firefox ");
+        jalog("launch process: firefox ");
         // addon entry point
         window.addEventListener("load", function () {
             if ("juick_classic_initialized" in this && this.juick_classic_initialized) {
@@ -1793,35 +1817,35 @@ try {
         }, false);
     } else if (isOpera) {
         //FIREFOX_CUT_START
-        window.console.log("launch process: opera");
+        jalog("launch process: opera");
         try {
             opera.extension.onmessage = function (e) {
                 // opera extension mode
                 try {
-                    window.console.log("opera on message.");
-                    window.console.log("opera on message: "+ e.data.action);
+                    jalog("opera on message.");
+                    jalog("opera on message: "+ e.data.action);
                     if (e.data.action === 'jc_load_jquery') {
                         // opera only!!
                         var script = document.createElement('script');
                         script.appendChild(document.createTextNode(e.data.script));
                         document.head.appendChild(script);
-                        window.console.log('juick classic(1): added jquery script to page: jQuery=' + window.jQuery);
-                        window.console.log('main process starting from opera');
+                        jalog('juick classic(1): added jquery script to page: jQuery=' + window.jQuery);
+                        jalog('main process starting from opera');
                         main_process(window.document, window);
-                        window.console.log('main process finished called from opera');
+                        jalog('main process finished called from opera');
                     }
                 } catch (e) {
-                    window.console.log("opera on message error: "+e);
+                    jalog("opera on message error: "+e);
                 }
             }
         } catch (e) {
-            window.console.log("launch process: opera 2nd try");
+            jalog("launch process: opera 2nd try");
             // opera tampermonkey and opera extension
             main_process(window.document, window);
         }
         //FIREFOX_CUT_END
     } else {
-        window.console.log("launch process: others (chrome)");
+        jalog("launch process: others (chrome)");
         // chrome
         main_process(window.document, window);
     }
