@@ -1,7 +1,7 @@
 {
     "name": "Juick Classic",
     "manifest_version": 2,
-    "version": "1.39",
+    "version": "1.41",
     "description": "Juick Classic extension for classic juick layout and stuff",
     "icons": { "48": "icon48.png", "128": "icon128.png" },
     "background": "background.html",

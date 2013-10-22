@@ -6,10 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1758" />
-    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1503" />
-    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1097" />
-    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="37" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1784" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1529" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="1123" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="40" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="544" />
+    <bookmark url="file://$PROJECT_DIR$/web/content_post.js" line="636" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" name="Default" comment="">
@@ -17,17 +19,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/content_post.js" afterPath="$PROJECT_DIR$/web/content_post.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install.rdf" afterPath="$PROJECT_DIR$/install.rdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/manifest.json" afterPath="$PROJECT_DIR$/web/manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="extension.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/META-INF/application.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356595667359" ignored="false" />
     <file path="/Jaext.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356603846227" ignored="false" />
     <file path="/Jaext.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356603244995" ignored="false" />
-    <file path="/Dummy.txt" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378221553808" ignored="false" />
+    <file path="/Dummy.txt" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1382474487084" ignored="false" />
     <file path="/manifest.json" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356618728569" ignored="false" />
     <file path="/background.html" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356603746820" ignored="false" />
     <file path="/content.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362520445889" ignored="false" />
-    <file path="/content_post.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378238841212" ignored="false" />
+    <file path="/content_post.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378491987489" ignored="false" />
     <file path="$PROJECT_DIR$/../android/com.juick.android/project.properties" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268501984" ignored="false" />
     <file path="/Juick_Classic.user.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367842442288" ignored="false" />
     <file path="$PROJECT_DIR$/../server/web/WEB-INF/web.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367832440170" ignored="false" />
@@ -37,7 +40,7 @@
     <file path="/PoweredByServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888476904" ignored="false" />
     <file path="$PROJECT_DIR$/../server/src/jui/MongoDB.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888402456" ignored="false" />
     <file path="/MongoDB.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1356888319416" ignored="false" />
-    <file path="/a.dummy" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378226468910" ignored="false" />
+    <file path="/a.dummy" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1379083966490" ignored="false" />
     <file path="/fragment.js2" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362522276766" ignored="false" />
     <file path="$PROJECT_DIR$/../server/web/charts/JuickCharts2/EXTXMPP_USERS.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357231574049" ignored="false" />
     <file path="/EXTXMPP_USERS.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1357231143549" ignored="false" />
@@ -156,7 +159,7 @@
     <file path="/Adda.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360284930850" ignored="false" />
     <file path="/script.js" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1360337237480" ignored="false" />
     <file path="$PROJECT_DIR$/../../itl-barcode/itl-barcode-android/res/raw/config.json" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362697882786" ignored="false" />
-    <file path="$PROJECT_DIR$/../android/com.juick.android/gen/com/juickadvanced/R.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362697888192" ignored="false" />
+    <file path="$PROJECT_DIR$/../android/com.juick.android/gen/com/juickadvanced/R.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378493318533" ignored="false" />
     <file path="$PROJECT_DIR$/../android/com.juick.android/res/xml/prefs_other.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1362698024694" ignored="false" />
     <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Arrays.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
     <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Progressions.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
@@ -172,17 +175,17 @@
     <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/Numbers.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
     <file path="$USER_HOME$/.IntelliJIdea12/config/plugins/Kotlin/lib/kotlin-plugin.jar!/jet/ExtensionFunctions.jet" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367065589964" ignored="false" />
     <file path="$PROJECT_DIR$/../server/web/charts/JuickCharts2/THEME_USAGE.jsp" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1367827646667" ignored="false" />
-    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/ClassicAPIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378223377361" ignored="false" />
-    <file path="/ClassicAPIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370123679713" ignored="false" />
-    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/APIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370167018853" ignored="false" />
-    <file path="/APIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370123648401" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/ClassicAPIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378488329581" ignored="false" />
+    <file path="/ClassicAPIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378485841997" ignored="false" />
+    <file path="$PROJECT_DIR$/../server/src/ja_gwt/server/APIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378486299677" ignored="false" />
+    <file path="/APIServlet.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1378486186510" ignored="false" />
     <file path="$PROJECT_DIR$/../android/com.juick.android/res/values/arrays.xml" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268370988" ignored="false" />
     <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/ja/JAUnansweredMessagesSource.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268393804" ignored="false" />
     <file path="/JAUnansweredMessagesSource.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268393804" ignored="false" />
     <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/MessagesFragment.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268501984" ignored="false" />
     <file path="$PROJECT_DIR$/../android/com.juick.android/src/com/juick/android/JuickMessagesAdapter.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368268501984" ignored="false" />
-    <file path="$PROJECT_DIR$/../../image-annotate/MyManagementViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370614200257" ignored="false" />
-    <file path="/MyManagementViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370614089095" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/MyManagementViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1379085140044" ignored="false" />
+    <file path="/MyManagementViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1379085129468" ignored="false" />
     <file path="$PROJECT_DIR$/../../image-annotate/project_support.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368652646480" ignored="false" />
     <file path="$PROJECT_DIR$/../../image-annotate/java-api.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623413737" ignored="false" />
     <file path="$PROJECT_DIR$/../../image-annotate/image_annotate.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370625340554" ignored="false" />
@@ -198,7 +201,7 @@
     <file path="/image_annotate.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368646100173" ignored="false" />
     <file path="$PROJECT_DIR$/../../image-annotate/MainViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623668187" ignored="false" />
     <file path="$PROJECT_DIR$/../../isignature/lua_controller/src/san/LuaSyncController.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368636402618" ignored="false" />
-    <file path="$PROJECT_DIR$/../../image-annotate/MyAngleEntryViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368646118557" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/MyAngleEntryViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1379086590555" ignored="false" />
     <file path="/MyAngleEntryViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368646118557" ignored="false" />
     <file path="/MainViewController.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370623666797" ignored="false" />
     <file path="/java-api.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1368650251982" ignored="false" />
@@ -217,6 +220,8 @@
     <file path="/TestP.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370680386206" ignored="false" />
     <file path="$PROJECT_DIR$/../../ipsc2013/src/main/TestQ.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370682090657" ignored="false" />
     <file path="/TestQ.java" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1370682078340" ignored="false" />
+    <file path="/userboot.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1379083429389" ignored="false" />
+    <file path="$PROJECT_DIR$/../../image-annotate/userboot.lua" changelist="c3f224a4-d1f2-4df7-a1fd-3e30f8dfb8ed" time="1379083432597" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +237,6 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -269,6 +273,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -308,10 +313,10 @@
       <file leaf-file-name="content_post.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/content_post.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="512" column="35" selection-start="24286" selection-end="24286" vertical-scroll-proportion="0.36933047">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1378238958385" expanded="true" signature="17338:17383" placeholder="..." />
+                <marker date="1382474517180" expanded="false" signature="17136:17181" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -401,10 +406,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="y" value="25" />
-    <option name="width" value="1286" />
-    <option name="height" value="977" />
+    <option name="y" value="26" />
+    <option name="width" value="1280" />
+    <option name="height" value="972" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -422,7 +426,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -433,58 +437,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extension" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -750,7 +703,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="25" width="1286" height="977" extended-state="6" />
+    <frame x="0" y="26" width="1280" height="972" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -758,13 +711,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3859649" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3859649" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -772,8 +725,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23984376" sideWeight="0.61403507" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23984376" sideWeight="0.61403507" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -783,6 +736,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -867,9 +821,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/popup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="78" selection-start="80" selection-end="80" vertical-scroll-proportion="0.06185567">
-          <folding />
-        </state>
+        <state line="2" column="78" selection-start="80" selection-end="80" vertical-scroll-proportion="0.06185567" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.sh">
@@ -879,16 +831,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/install.rdf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="18" column="6" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/opera_background.js">
@@ -953,10 +901,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/content_post.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="512" column="35" selection-start="24286" selection-end="24286" vertical-scroll-proportion="0.36933047">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1378238958385" expanded="true" signature="17338:17383" placeholder="..." />
+            <marker date="1382474517180" expanded="false" signature="17136:17181" placeholder="..." />
           </folding>
         </state>
       </provider>

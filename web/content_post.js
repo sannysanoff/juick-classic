@@ -5,45 +5,51 @@
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
 // @include     http://juick.com/*
 // @include     http://dev.juick.com/*
+// @updateURL   https://userscripts.org/scripts/source/155098.meta.js
+// @downloadURL https://userscripts.org/scripts/source/155098.user.js
 // @grant       none
-// @version     1.39
+// @version     1.41
 // ==/UserScript==
 
 // commit checklist:
 // 1. verify scrolling menu abs/fix position
 
 function jalog(str) {
-    if (Application && Application.console && Application.console.log) {
+    try {
         Application.console.log(str)
-        window.alert("withapp: "+str);
-    } else {
+    } catch(e) {
         if (window.console)
             window.console.log(str);
-        if (console)
+        else if (console)
             console.log(str);
-        window.alert(str);
     }
 }
 
 jalog("JA: launched!")
 var ua = window.navigator.userAgent;
-jalog("window.navigator.userAgent=" + ua)
 var firefox = ua.indexOf("Gecko") != -1 && ua.indexOf("like Gecko") == -1;
 var isOpera = ua.indexOf("Presto") != -1;
+var firefoxAddon = false;
+try { var comps = Components.classes; firefoxAddon = true; } catch (e) {}
+
 var originalTop = -1;
 var jaiprtru = "https://ja.ip.rt.ru:8443/"
 //var jaiprtru = "http://localhost:8080/"
 
 try {
+    window.name = "japluginwindow";
     if (window.document.getElementById("powered_by_juick_classic"))
         throw "Document already processed by juick classic "
-//    window.document.jc_processed = true;
     window.addEventListener("message", function (event) {
+        jalog("onmessage: "+event);
+        jalog("onmessage: "+event.data);
+        jalog("onmessage: "+event.data.callbackId);
+        jalog("onmessage: "+event.data.data);
         if (event.data.callbackId) {
             window[event.data.callbackId](event.data.data);
         }
     }, false)
-    console.log("main_process definitiion begin")
+    //jalog("main_process definitiion begin")
     function main_process(document, window) {
         jalog("JA: launched!")
 
@@ -311,30 +317,15 @@ try {
 
             }
 
-            function firefoxAddon(comps) {
-                try {
-                    if (comps.classes) {
-                        return true
-                    }
-                } catch (e) {
-                    return false;
-                }
-            }
-
             function parseHTML(response) {
                 var docu = null;
                 var resp = "" + response;
-                var comps = null;
-                try {
-                    comps = Components;
-                } catch (e) { /* not found; */
-                }
-                if (firefox && comps && firefoxAddon(comps)) {
+                if (firefoxAddon) {
                     // firefox addon mode
-//                    jalog("firefox addon mode");
+                    // jalog("firefox addon mode");
                     try {
                         const PARSER_UTILS = "@mozilla.org/parserutils;1";
-                        var newDoc = document.implementation.createHTMLDocument('')
+                        var newDoc = document.implementation.createHTMLDocument('');
                         if (PARSER_UTILS in Components.classes) {
 
                             var parser = Components.classes[PARSER_UTILS].getService(Ci.nsIParserUtils);
@@ -354,7 +345,7 @@ try {
                         }
                     } catch (e) {
                         jalog("JA(5): " + e)
-                        alert(e);
+                        //alert(e);
                     }
                 } else if (firefox) {
                     jalog("firefox gm mode");
@@ -528,7 +519,12 @@ try {
 
             // places column with links etc to the right
             function fixColumnPosition() {
-                var content = document.getElementById("content");
+                var content = null;
+                try {
+                    content = document.getElementById("content");
+                } catch (e) {
+                    //
+                }
                 if (content) {
                     if (mode == "MESSAGES") {
                         var rcol = document.getElementById("rcol");
@@ -546,7 +542,13 @@ try {
                                 var d = document.getElementById("column");
                                 var c = document.getElementById("#rcol");
                                 if (originalTop == -1) {
-                                    originalTop = $("#column").offset().top;
+                                    jalog("col="+$("#column"))
+                                    jalog("coloffs="+$(document.getElementById("column")).offset())
+                                    try {
+                                        originalTop = $(document.getElementById("column")).offset().top;
+                                    } catch (e) {
+                                        jalog("e="+e)
+                                    }
                                 }
                                 var b = originalTop
                                 if (b < e) {
@@ -596,29 +598,46 @@ try {
                         }
                     }
                     data.hash = getCookie("hash")
-                    var scriptel = document.createElement("script");
                     var cb = "jacb_"+(new Date().getTime())
-                    window[cb] = function(arg) {
-                        if (indicatorPeer.indicator && indicatorPeer.indicator.parentNode) {
-                            indicatorPeer.indicator.parentNode.removeChild(indicatorPeer.indicator);
-                            indicatorPeer.indicator = null;
-                        }
-                        try {
-                            callback(arg);
-                        } finally {
-                            window[cb] = null;
-                            document.head.removeChild(scriptel);
-                        }
-                    }
                     var src = jaiprtru + url + "?callback="+cb
                     for(var i in data) {
                         src = src + "&" + i + "="+encodeURIComponent(data[i]);
                     }
-                    scriptel.src = src;
+                    if (firefox && !firefoxAddon) {
+                        // firefox content script, cross-domain request ok
+                        src = src + '&format=json'
+                        doAjaxRequest(src, function(txt) {
+                            try {
+                                var json = JSON.parse(txt);
+                                callback(json);
+                            } finally {
+                                if (indicatorPeer.indicator && indicatorPeer.indicator.parentNode) {
+                                    indicatorPeer.indicator.parentNode.removeChild(indicatorPeer.indicator);
+                                    indicatorPeer.indicator = null;
+                                }
+                            }
+                        }, false, false)
+                    } else {
+                        // all other browsers support script calls
+                        var scriptel = document.createElement("script");
+                        scriptel.src = src;
+                        window[cb] = function(arg) {
+                            if (indicatorPeer.indicator && indicatorPeer.indicator.parentNode) {
+                                indicatorPeer.indicator.parentNode.removeChild(indicatorPeer.indicator);
+                                indicatorPeer.indicator = null;
+                            }
+                            try {
+                                callback(arg);
+                            } finally {
+                                window[cb] = null;
+                                document.head.removeChild(scriptel);
+                            }
+                        }
+                    }
                     document.head.appendChild(scriptel);
                 } else {
                     if (confirm("ВНИМАНИЕ! Это действие требует подтверждения того, что вы *доверяете* третьему участнику (серверу Juick Advanced) - ваш ключ будет использован одноразово для осуществления вашей идентификации в целях предотвращения нецелевого использования. Трафик на этот сервер идет через защищенное соединение (https). ")) {
-                        setCookie("jaconf","1");
+                        setCookie("jaconf","1", 5000);
                         callJA(url, data, callback, indicatorPeer);
                     }
                 }
@@ -646,7 +665,7 @@ try {
             var jc_os = getCookie("jc_os");
             var otherSources = jc_os ? jc_os != "0" : false;
             var jcs = getCookie("jcs");
-            var juickClassicStyle = jcs ? jcs != "0" : false;
+            var juickClassicStyle = true; // jcs ? jcs != "0" : false;
             var rt = getCookie("rt");
             var regularTime = rt ? rt != "0" : false;
             var sub = getCookie("sub");
@@ -690,6 +709,11 @@ try {
                 setText(hdr, "Juick Classic")
                 hdr.setAttribute("style", "background: url('http://ja.ip.rt.ru:8080/images/juick_classic_48.png') no-repeat; padding-left: 58px; line-height: 48px;");
                 addNode(hdr);
+                var comment = document.createElement("span")
+                comment.style.fontSize = "12px";
+                comment.style.paddingLeft = "10px"
+                comment.appendChild(document.createTextNode("(нажимать на кнопку OK внизу не требуется)"))
+                hdr.appendChild(comment)
                 //
                 // adding theme selection checkbox
                 //
@@ -714,6 +738,7 @@ try {
 
                     }
                 }
+
                 //
                 // Juick Classic little style adjustments
                 //
@@ -721,6 +746,7 @@ try {
                 var inputJCS = document.createElement("input");
                 var juickClassicStyleCR = inputJCS;
                 inputJCS.setAttribute("type", "checkbox");
+                inputJCS.disabled = true;
                 if (juickClassicStyle)
                     inputJCS.checked = true;
                 p.appendChild(inputJCS);
@@ -1776,9 +1802,9 @@ try {
 
             fixColumnPosition()
 
-            if ("1.34" != getCookie("welc")) {
-                setCookie("welc", "1.34", 5000)
-                window.alert("Опции Juick Classic встроены в страницу настроек Жуйка. Все опции по умолчанию отключены. Приятного пользования.")
+            if ("1.41" != getCookie("welc")) {
+                setCookie("welc", "1.41", 5000)
+                window.alert("Juick Classic обновился.\nОпции Juick Classic встроены в страницу настроек Жуйка.\nВсе опции по умолчанию отключены.\nПриятного пользования.")
             }
 
             jalog("main function ended")
@@ -1791,10 +1817,10 @@ try {
         }
     }
 
-    jalog("main_process definitiion end")
+    //jalog("main_process definitiion end")
 
     if (firefox) {
-        jalog("launch process: firefox ");
+        // jalog("launch process: firefox ");
         // addon entry point
         window.addEventListener("load", function () {
             if ("juick_classic_initialized" in this && this.juick_classic_initialized) {
