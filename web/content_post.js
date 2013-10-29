@@ -8,7 +8,7 @@
 // @updateURL   https://userscripts.org/scripts/source/155098.meta.js
 // @downloadURL https://userscripts.org/scripts/source/155098.user.js
 // @grant       none
-// @version     1.41
+// @version     1.42
 // ==/UserScript==
 
 // commit checklist:
@@ -182,16 +182,21 @@ try {
             }
 
             function convertDate(juickDate) {
-                // input juick date: 2013-06-02 07:19:11.0 GMT
-                // output javascript default date format (mostly):  "Sun Jun 02 2013 10:40:36 GMT+0300 (EEST)"
-                var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-                var month = months[parseInt(juickDate.substr(6, 8))-1]; // convert month
-                var result = month + " ";
-                result += juickDate.substr(8, 2) +" ";  // date
-                result += juickDate.substr(0, 4) +" ";  // year
-                result += juickDate.substr(11, 8) +" ";  // time
-                result += "GMT";
-                return result;
+                // input: juick date: 2013-06-02 07:19:11.0 GMT
+                // output: javascript default date format (mostly):  "Sun Jun 02 2013 10:40:36 GMT+0300 (EEST)"
+                //         firefox: 2013-06-02T07:19:11
+                if (firefox) {
+                    return juickDate.substr(0, 10)+"T"+juickDate.substr(11,8)+"+00:00";
+                } else {
+                    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                    var month = months[parseInt(juickDate.substr(5, 2))-1]; // convert month
+                    var result = month + " ";
+                    result += juickDate.substr(8, 2) +" ";  // date
+                    result += juickDate.substr(0, 4) +" ";  // year
+                    result += juickDate.substr(11, 8) +" ";  // time
+                    result += "GMT";
+                    return result;
+                }
             }
 
             function formatAndAppendText(nodeToAppendTo, str) {
@@ -384,7 +389,7 @@ try {
 
             // (C) power juick (mostly)
             function inlineMedia(root) {
-                var all_links = getElementsByXPath("div[@class='msg-txt']/a", root);
+                var all_links = getElementsByXPath(".//div[@class='msg-txt']/a", root);
 
                 function createImageLink(elem, imgref, linkref) {
                     var a = document.createElement("a");
@@ -485,7 +490,6 @@ try {
                                         if (comm) {
                                             var header = getText(comm.getElementsByClassName("msg-header")[0]);
                                             var txt = getText(comm.getElementsByClassName("msg-txt")[0]);
-                                            //alert("header="+header)
                                             var newDiv = document.createElement("div");
                                             var newHdr = document.createElement("span");
                                             newHdr.appendChild(document.createTextNode(header + " "));
@@ -497,6 +501,10 @@ try {
                                             newDiv.style.paddingLeft = "60px";
                                             newDiv.style.fontSize = "smaller";
                                             newDiv.setAttribute("class", "comments-" + msgid);
+                                            if (theme == "orig") {
+                                                newDiv.style.backgroundColor = "#fff";
+                                                newDiv.style.marginLeft = "58px";
+                                            }
                                             dest.appendChild(newDiv);
                                         }
                                     }
@@ -956,6 +964,9 @@ try {
             var backgroundColor = null;
             var linkColor = null;
 
+            if (theme != "orig") {
+                style.appendChild(document.createTextNode(".msg-cont { background: inherit; }"));
+            }
             if (theme == "gray") {
                 // all links
                 linkColor = "#666";
@@ -1148,8 +1159,9 @@ try {
                             }
                             return s;
                         }
+                        var converted = convertDate(a.title)
                         var dt = new Date(convertDate(a.title));
-                        // alert(a.title)
+                        alert(a.title+" dt="+dt+" converted="+converted)
                         date = ""+(1900+dt.getYear())+"-"+pad2(""+(dt.getMonth()+1))+"-"+pad2(""+(dt.getDate()))
                         date += " ";
                         date += pad2(""+(dt.getHours()))+":"+pad2(""+(dt.getMinutes()));
@@ -1195,9 +1207,12 @@ try {
                         // plain text date
                         var theSpan = message.ownerDocument.createElement("span");
                         theSpan.setAttribute("class", "msg-ts");
+                        theSpan.style.marginLeft = "15px";  // for date spacing
                         theSpan.appendChild(message.ownerDocument.createTextNode(date));
                         if (comments.length == 0) {
-                            theA.setAttribute("style", "padding-left: 60px; font-size: small;")
+                            theA.setAttribute("style", "padding-left: 10px; font-size: small;")
+                            theSpan.style.paddingLeft = "15px";
+                            newPart.setAttribute("clazz","zeroCommentsFooter");
                             newPart.appendChild(theA);
                             newPart.appendChild(theSpan);
                             // A and SPAN together
@@ -1297,7 +1312,7 @@ try {
                     inlineMedia(message);
             }
 
-            function maybeAddImageButton(ta, msgid, rid) {
+            function maybeAddImageButton(ta, msgid, rid, addOK) {
                 if (document.getElementById("postimage-" + rid) != null) {
                     // already here
                     return false;
@@ -1322,7 +1337,17 @@ try {
                     theIMG.style.background = "#FFFFFF";
                     theA.href = "/post?body=%23" + msgid + (rid != 0 ? "/" + rid : "") + " ";
                     ta.parentNode.insertBefore(theA, ta.nextSibling);
-                    theA.nextSibling.style.color = "black"
+                    if (addOK) {
+                        // in firefox ugnich handler does not work
+                        var submit = document.createElement("input");
+                        submit.setAttribute("type","submit")
+                        submit.setAttribute("value","OK")
+                        submit.setAttribute("style","color: black");
+                        ta.parentNode.insertBefore(submit, theA);
+                    } else {
+                        // make OK black
+                        theA.nextSibling.style.color = "black"
+                    }
                     return true;
                 }
             }
@@ -1415,7 +1440,7 @@ try {
                             (function (ta) {
                                 ta.addEventListener("focus", function () {
                                     window.setTimeout(function () {  // after button is added
-                                        if (maybeAddImageButton(ta, msgid, 0)) {
+                                        if (maybeAddImageButton(ta, msgid, 0, firefox)) {
                                             var oldWidth = ta.offsetWidth;
                                             ta.style.width = (oldWidth - 50) + "px";
                                         }
@@ -1461,19 +1486,24 @@ try {
                             for (var l = 0; l < allLinks.length; l++) {
                                 var linkText = getText(allLinks[l]);
                                 if (linkText == "Comment" || linkText == "Ответить") {
+                                    var old = allLinks[l].onclick;
                                     (function (oldProg, commentNode, theA, msgid, rid) {
-                                        allLinks[l].href = "javascript:window.toggle_response_"+rid+"();";
-                                        window["toggle_response_"+rid] = function () {
-                                            oldProg();
+                                        allLinks[l].onclick = function () {
+                                            try {
+                                                oldProg();
+                                            } catch (e){
+                                                // in chrome this raises an exception, but still opens the textarea;
+                                                // ff ok
+                                            }
                                             setText(theA, "#" + msgid + "/" + rid);
                                             var tas = commentNode.getElementsByTagName("textarea");
                                             if (tas && tas.length > 0) {
                                                 var ta = tas[0];
-                                                maybeAddImageButton(ta, msgid, rid);
+                                                maybeAddImageButton(ta, msgid, rid, false);
                                             }
                                             return false;
                                         }
-                                    })(allLinks[l].onclick, linkz.parentNode, theA, msgid, rid);
+                                    })(old, linkz.parentNode, theA, msgid, rid);
                                 }
                             }
                         }
